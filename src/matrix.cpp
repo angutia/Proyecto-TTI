@@ -104,7 +104,7 @@ Matrix& Matrix::operator * (Matrix &m) {
 	
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= m.n_column; j++) {
-			int aux = 0;
+			double aux = 0.0;
 			for(int k = 1; k <= this->n_column; k++) {
 				aux = aux + (*this)(i,k) * m(k,j);
 			}
