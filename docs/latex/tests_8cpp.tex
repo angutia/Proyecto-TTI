@@ -1,0 +1,118 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/tests/tests.cpp File Reference}
+\hypertarget{tests_8cpp}{}\label{tests_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/tests/tests.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/tests/tests.cpp}}
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}matrix.\+h"{}}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tests_8cpp_a3e26a8d27caa386ed0ea7ce9d5b7c4ed}{FAIL}}()
+\item 
+\#define \mbox{\hyperlink{tests_8cpp_ab7bf6e2bf0262bce12f04d753fa389c9}{\+\_\+assert}}(test)
+\item 
+\#define \mbox{\hyperlink{tests_8cpp_a91b59b48448415132fb0ba63ad048ba0}{\+\_\+verify}}(test)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{tests_8cpp_a3677c19fd7f5e97a58733e0a15082327}{m\+\_\+equals}} (\mbox{\hyperlink{class_matrix}{Matrix}} A, \mbox{\hyperlink{class_matrix}{Matrix}} B, double p)
+\item 
+int \mbox{\hyperlink{tests_8cpp_abf714e2ae2d143937f0d7d3379deb687}{m\+\_\+sum\+\_\+01}} ()
+\item 
+int \mbox{\hyperlink{tests_8cpp_a2f68ad5306c9969dd9f1a60219cf1b46}{m\+\_\+sub\+\_\+01}} ()
+\item 
+int \mbox{\hyperlink{tests_8cpp_a4ab9a8c0c7ed4a936ae41b3091d59ff3}{m\+\_\+zeros\+\_\+01}} ()
+\item 
+int \mbox{\hyperlink{tests_8cpp_a438723717e25f3ab29c50c261ed54996}{all\+\_\+tests}} ()
+\item 
+int \mbox{\hyperlink{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{tests_8cpp_a91aa4203331e915f2d20dd26579791ee}{tests\+\_\+run}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{tests_8cpp_ab7bf6e2bf0262bce12f04d753fa389c9}\index{tests.cpp@{tests.cpp}!\_assert@{\_assert}}
+\index{\_assert@{\_assert}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{\_assert}{\_assert}}
+{\footnotesize\ttfamily \label{tests_8cpp_ab7bf6e2bf0262bce12f04d753fa389c9} 
+\#define \+\_\+assert(\begin{DoxyParamCaption}\item[{}]{test}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\ \{\ \textcolor{keywordflow}{if}\ (!(test))\ \{\ \mbox{\hyperlink{tests_8cpp_a3e26a8d27caa386ed0ea7ce9d5b7c4ed}{FAIL}}();\ \textcolor{keywordflow}{return}\ 1;\ \}\ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{tests_8cpp_a91b59b48448415132fb0ba63ad048ba0}\index{tests.cpp@{tests.cpp}!\_verify@{\_verify}}
+\index{\_verify@{\_verify}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{\_verify}{\_verify}}
+{\footnotesize\ttfamily \label{tests_8cpp_a91b59b48448415132fb0ba63ad048ba0} 
+\#define \+\_\+verify(\begin{DoxyParamCaption}\item[{}]{test}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\ \{\ \textcolor{keywordtype}{int}\ r=test();\ \mbox{\hyperlink{tests_8cpp_a91aa4203331e915f2d20dd26579791ee}{tests\_run}}++;\ \textcolor{keywordflow}{if}(r)\ \textcolor{keywordflow}{return}\ r;\ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{tests_8cpp_a3e26a8d27caa386ed0ea7ce9d5b7c4ed}\index{tests.cpp@{tests.cpp}!FAIL@{FAIL}}
+\index{FAIL@{FAIL}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{FAIL}{FAIL}}
+{\footnotesize\ttfamily \label{tests_8cpp_a3e26a8d27caa386ed0ea7ce9d5b7c4ed} 
+\#define FAIL(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf(\textcolor{stringliteral}{"{}\(\backslash\)nfailure\ in\ \%s()\ line\ \%d\(\backslash\)n"{}},\ \_\_func\_\_,\ \_\_LINE\_\_)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tests_8cpp_a438723717e25f3ab29c50c261ed54996}\index{tests.cpp@{tests.cpp}!all\_tests@{all\_tests}}
+\index{all\_tests@{all\_tests}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{all\_tests()}{all\_tests()}}
+{\footnotesize\ttfamily \label{tests_8cpp_a438723717e25f3ab29c50c261ed54996} 
+int all\+\_\+tests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8cpp_a3677c19fd7f5e97a58733e0a15082327}\index{tests.cpp@{tests.cpp}!m\_equals@{m\_equals}}
+\index{m\_equals@{m\_equals}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_equals()}{m\_equals()}}
+{\footnotesize\ttfamily \label{tests_8cpp_a3677c19fd7f5e97a58733e0a15082327} 
+int m\+\_\+equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}}]{A}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}}}]{B}{, }\item[{double}]{p}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8cpp_a2f68ad5306c9969dd9f1a60219cf1b46}\index{tests.cpp@{tests.cpp}!m\_sub\_01@{m\_sub\_01}}
+\index{m\_sub\_01@{m\_sub\_01}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_sub\_01()}{m\_sub\_01()}}
+{\footnotesize\ttfamily \label{tests_8cpp_a2f68ad5306c9969dd9f1a60219cf1b46} 
+int m\+\_\+sub\+\_\+01 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8cpp_abf714e2ae2d143937f0d7d3379deb687}\index{tests.cpp@{tests.cpp}!m\_sum\_01@{m\_sum\_01}}
+\index{m\_sum\_01@{m\_sum\_01}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_sum\_01()}{m\_sum\_01()}}
+{\footnotesize\ttfamily \label{tests_8cpp_abf714e2ae2d143937f0d7d3379deb687} 
+int m\+\_\+sum\+\_\+01 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8cpp_a4ab9a8c0c7ed4a936ae41b3091d59ff3}\index{tests.cpp@{tests.cpp}!m\_zeros\_01@{m\_zeros\_01}}
+\index{m\_zeros\_01@{m\_zeros\_01}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_zeros\_01()}{m\_zeros\_01()}}
+{\footnotesize\ttfamily \label{tests_8cpp_a4ab9a8c0c7ed4a936ae41b3091d59ff3} 
+int m\+\_\+zeros\+\_\+01 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{tests.cpp@{tests.cpp}!main@{main}}
+\index{main@{main}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{tests_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{tests_8cpp_a91aa4203331e915f2d20dd26579791ee}\index{tests.cpp@{tests.cpp}!tests\_run@{tests\_run}}
+\index{tests\_run@{tests\_run}!tests.cpp@{tests.cpp}}
+\doxysubsubsection{\texorpdfstring{tests\_run}{tests\_run}}
+{\footnotesize\ttfamily \label{tests_8cpp_a91aa4203331e915f2d20dd26579791ee} 
+int tests\+\_\+run = 0}
+

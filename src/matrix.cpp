@@ -5,7 +5,7 @@ Matrix::Matrix(const int v_size) {
     if (v_size < 0) {
 		cout << "Vector create: error in v_size\n";
         exit(EXIT_FAILURE);
-	}
+	}    
 	
 	this->n_row = 1;
 	this->n_column = v_size;
