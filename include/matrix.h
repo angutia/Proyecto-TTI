@@ -25,8 +25,6 @@ public:
 	Matrix& operator * (Matrix &m);
 	Matrix& operator / (Matrix &m);
 	
-	Matrix& inv (Matrix &m);
-	
 	// Non-member operators
 	friend ostream& operator << (ostream &o, Matrix &m);
 };
@@ -36,5 +34,7 @@ ostream& operator << (ostream &o, Matrix &m);
 
 // Methods
 Matrix& zeros(const int n_row, const int n_column);
+Matrix& inv (Matrix &m);
+double det (Matrix &m);
 
 #endif

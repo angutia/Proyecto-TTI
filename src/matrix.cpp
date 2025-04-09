@@ -115,6 +115,22 @@ Matrix& Matrix::operator * (Matrix &m) {
 	return *m_aux;
 }
 
+Matrix& Matrix::operator / (Matrix &m) {
+	if (m.n_column != m.n_row) {
+		cout << "Matrix div: error in n_row/n_column (non-square matrix)\n";
+        exit(EXIT_FAILURE);
+	}
+
+	if (this->n_column != m.n_row) {
+		cout << "Matrix div: error in n_row/n_column\n";
+        exit(EXIT_FAILURE);
+	}
+	
+	Matrix m_aux = inv(m);
+	
+	return (*this)*m_aux;
+}
+
 ostream& operator << (ostream &o, Matrix &m) {
 	for (int i = 1; i <= m.n_row; i++) {
         for (int j = 1; j <= m.n_column; j++)
@@ -124,6 +140,82 @@ ostream& operator << (ostream &o, Matrix &m) {
 	
     return o;
 }
+
+Matrix& inv (Matrix &m) {
+	if (m.n_column != m.n_row) {
+		cout << "Matrix inv: error in n_row/n_column (non-square matrix)\n";
+        exit(EXIT_FAILURE);
+	}
+	
+	int r = m.n_row;
+	int c = m.n_column;
+	
+	Matrix *m_aux = new Matrix(r, 2*c);
+	for(int i = 1; i <= r; i++) {
+		for(int j = 1; j <= c; j++) {
+			(*m_aux)(i,j) = m(i,j);
+		}
+		
+		for(int j = c+1; j <= 2*c; j++) {
+			if (j==(i+c)) {
+				(*m_aux)(i,j) = 1;
+			} else {
+				(*m_aux)(i,j) = 0;
+			}
+		}
+	}	
+	
+	for(int i = 1; i <= r; i++) {
+		double pivot = (*m_aux)(i,i);
+		for(int j = 1; j <= 2*c; j++) {
+			(*m_aux)(i,j) /= pivot;
+		}
+		
+		for(int k = 1; k <= r; k++) {
+            if (k != i) {
+                double factor = (*m_aux)(k,i);
+                for (int j = 1; j <= 2*c; j++) {
+                    (*m_aux)(k,j) -= factor * (*m_aux)(i,j);
+                }
+            }
+        }
+	}
+	
+	Matrix *m_aux_inv = new Matrix(r, c);
+	for(int i = 1; i <= r; i++) {		
+		for(int j = 1; j <= c; j++) {
+			(*m_aux_inv)(i,j) = (*m_aux)(i,j+c);
+		}
+	}
+	
+	return (*m_aux_inv);
+}
+
+double det (Matrix &m) {
+	double aux_det = 0;
+	Matrix *submatrix = new Matrix(m.n_row, m.n_column);
+	if (m.n_row == 2){
+		return ((m(1,1) * m(2,2)) - (m(2,1) * m(1,2)));
+	} else {
+		for (int x = 0; x < m.n_row; x++) {
+			int subi = 1;
+			for (int i = 2; i <= m.n_row; i++) {
+				int subj = 1;
+				for (int j = 1; j <= m.n_row; j++) {
+					if (j == x) {
+						continue;
+					}
+					(*submatrix)(subi,subj) = m(i,j);
+					subj++;
+				}
+				subi++;
+			}
+			aux_det = aux_det + (pow(-1, x) * m(0,x) * det(*submatrix));
+		}
+	}
+	return aux_det;
+}
+
 
 Matrix& zeros(const int n_row, const int n_column) {
 	Matrix *m_aux = new Matrix(n_row, n_column);
@@ -136,3 +228,4 @@ Matrix& zeros(const int n_row, const int n_column) {
 	
 	return (*m_aux);
 }
+

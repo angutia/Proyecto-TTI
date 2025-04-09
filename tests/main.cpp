@@ -55,6 +55,24 @@ int main() {
 	cout << "B\n" << B << "\n";
 	Matrix C = A*B;
 	cout << "C\n" << C << "\n";
+	
+	
+	
+	Matrix D(4, 4);
+	D(1,1) = 2; D(1,2) = 0; D(1,3) = 0; D(1,4) = 1;
+	D(2,1) = 7; D(2,2) = -2; D(2,3) = 1; D(2,4) = 0;
+	D(3,1) = 0; D(3,2) = -3; D(3,3) = 0; D(3,4) = 2;
+    D(4,1) = 1; D(4,2) = 0; D(4,3) = -2; D(4,4) = -2;
+
+	cout << "D\n" << D << "\n";
+	cout << "inv(D)\n" << inv(D) << "\n";
+	Matrix E = A/D;
+	cout << "E=A/D\n" << E << "\n";
+	E = D*inv(D);
+	cout << "E = D*inv(D)\n" << E << "\n";
+	
+	cout << "det(m1)\n" << det(m1) << "\n";
+	
 
     return 0;
 }
