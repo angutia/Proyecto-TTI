@@ -1,9 +1,15 @@
 #include "..\include\matrix.h"
+#include "..\include\R_x.hpp"
 #include <iostream>
 
 using namespace std;
 
 int main() {
+	Matrix aux = R_x(3);
+	cout << "aux\n" << aux << "\n";
+	
+	
+	
     Matrix M1(3, 2);
 	M1(1,1) = 5;
 	

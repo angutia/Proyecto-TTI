@@ -25,6 +25,8 @@ public:
 	Matrix& operator * (Matrix &m);
 	Matrix& operator / (Matrix &m);
 	
+	Matrix& inv (Matrix &m);
+	
 	// Non-member operators
 	friend ostream& operator << (ostream &o, Matrix &m);
 };
