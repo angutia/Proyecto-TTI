@@ -1,3 +1,22 @@
+// $Header$
+//------------------------------------------------------------------------------
+// matrix
+//------------------------------------------------------------------------------
+// ProyectoTTI: Proyecto Taller Transversal I
+//
+// **Legal**
+//
+// Created: 2025/03/28
+//
+/** @file matrix.h
+*   @brief This header contains the matrix operations.
+*
+*   @author Ander Gutiérrez Andrés.
+*   @bug No known bugs.
+*/
+//------------------------------------------------------------------------------
+
+
 #ifndef _MATRIX_
 #define _MATRIX_
 
@@ -14,11 +33,55 @@ public:
 	double **data;
 
     // Parameterized constructor
+	
+	//------------------------------------------------------------------------------
+	// Matrix(const int n_row, const int n_column)
+	//------------------------------------------------------------------------------
+	/**
+	* @brief Creates a new matrix.
+	*
+	* @param [in] n_row Number of rows of the matrix to be created.
+	* @param [in] n_column Number of columns of the matrix to be created.
+	*/
+	//------------------------------------------------------------------------------
     Matrix(const int n_row, const int n_column);
+	
+	//------------------------------------------------------------------------------
+	// Matrix(const int v_size)
+	//------------------------------------------------------------------------------
+	/**
+	* @brief Creates a new vector.
+	*
+	* @param [in] v_size Size of the vector to be created.
+	*/
+	//------------------------------------------------------------------------------
 	Matrix(const int v_size);
 	
 	// Member operators
+	
+	//------------------------------------------------------------------------------
+	// operator () (const int row, const int column)
+	//------------------------------------------------------------------------------
+	/**
+	* @brief Returns the element (row, column) of a matrix.
+	*
+	* @param [in] row Row of the matrix to extract the element from.
+	* @param [in] column Column of the matrix to extract the element from.
+	* @return The corresponding element of the matrix.
+	*/
+	//------------------------------------------------------------------------------
 	double& operator () (const int row, const int column);
+	
+	//------------------------------------------------------------------------------
+	// operator () (const int n)
+	//------------------------------------------------------------------------------
+	/**
+	* @brief Returns the nth element of a vector.
+	*
+	* @param [in] n Number of element to extract from the vector.
+	* @return The corresponding element of the vector.
+	*/
+	//------------------------------------------------------------------------------
 	double& operator () (const int n);
 	Matrix& operator + (Matrix &m);
 	Matrix& operator - (Matrix &m);

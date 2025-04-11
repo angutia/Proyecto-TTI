@@ -1,3 +1,22 @@
+// $Source$
+//------------------------------------------------------------------------------
+// matrix
+//------------------------------------------------------------------------------
+// ProyectoTTI: Proyecto Taller Transversal I
+//
+// **Legal**
+//
+// Created: 2025/03/28
+//
+/** @file matrix.cpp
+*   @brief Source of the matrix operations.
+*
+*   @author Ander Gutiérrez Andrés.
+*   @bug No known bugs.
+*/
+//------------------------------------------------------------------------------
+
+
 #include "..\include\matrix.h"
 
 
@@ -147,6 +166,11 @@ Matrix& inv (Matrix &m) {
         exit(EXIT_FAILURE);
 	}
 	
+	if (det(m)==0) {
+		cout << "Matrix inv: error in n_row/n_column (non-invertible matrix)\n";
+        exit(EXIT_FAILURE);
+	}
+	
 	int r = m.n_row;
 	int c = m.n_column;
 	
@@ -193,11 +217,11 @@ Matrix& inv (Matrix &m) {
 
 double det (Matrix &m) {
 	double aux_det = 0;
-	Matrix *submatrix = new Matrix(m.n_row, m.n_column);
+	Matrix *submatrix = new Matrix(m.n_row-1, m.n_column-1);
 	if (m.n_row == 2){
 		return ((m(1,1) * m(2,2)) - (m(2,1) * m(1,2)));
 	} else {
-		for (int x = 0; x < m.n_row; x++) {
+		for (int x = 1; x <= m.n_row; x++) {
 			int subi = 1;
 			for (int i = 2; i <= m.n_row; i++) {
 				int subj = 1;
@@ -210,7 +234,7 @@ double det (Matrix &m) {
 				}
 				subi++;
 			}
-			aux_det = aux_det + (pow(-1, x) * m(0,x) * det(*submatrix));
+			aux_det = aux_det + (pow(-1, x+1) * m(1,x) * det(*submatrix));
 		}
 	}
 	return aux_det;

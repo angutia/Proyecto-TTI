@@ -71,7 +71,12 @@ int main() {
 	E = D*inv(D);
 	cout << "E = D*inv(D)\n" << E << "\n";
 	
-	cout << "det(m1)\n" << det(m1) << "\n";
+	
+	Matrix m(3,3);
+	m(1,1) = 1; m(1,2) = 2; m(1,3) = 4;
+	m(2,1) = 2; m(2,2) = 3; m(2,3) = -1;
+	m(3,1) = 1; m(3,2) = 4; m(3,3) = 0;
+	cout << "det(m)\n" << det(m) << "\n";
 	
 
     return 0;

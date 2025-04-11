@@ -4,7 +4,7 @@
 #include "..\include\matrix.h"
 #include <cmath>
 
-Matrix R_x(double angle);
+Matrix& R_x(double angle);
 
 
 
