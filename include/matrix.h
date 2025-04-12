@@ -83,12 +83,63 @@ public:
 	*/
 	//------------------------------------------------------------------------------
 	double& operator () (const int n);
+
+    //------------------------------------------------------------------------------
+    // operator + (Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Adds a matrix to the current matrix.
+     * 
+     * @param m Matrix to be added.
+     * @return The resulting matrix.
+     */
 	Matrix& operator + (Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // operator - (Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Subtracts a matrix from the current matrix.
+     * 
+     * @param m Matrix to be subtracted.
+     * @return The resulting matrix.
+     */
 	Matrix& operator - (Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // operator * (Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Multiplies the current matrix by another matrix.
+     * 
+     * @param m Matrix to be multiplied.
+     * @return The resulting matrix.
+     */
 	Matrix& operator * (Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // operator / (Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Divides the current matrix by another matrix.
+     * 
+     * @param m Matrix to be divided.
+     * @return The resulting matrix.
+     */
 	Matrix& operator / (Matrix &m);
 	
+
 	// Non-member operators
+
+    //------------------------------------------------------------------------------
+    // operator << (ostream &o, Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Prints the matrix to the output stream.
+     * 
+     * @param o Output stream to print the matrix to.
+     * @param m Matrix to be printed.
+     */
 	friend ostream& operator << (ostream &o, Matrix &m);
 };
 
@@ -96,8 +147,50 @@ public:
 ostream& operator << (ostream &o, Matrix &m);
 
 // Methods
+
+//------------------------------------------------------------------------------
+// zeros(const int n_row, const int n_column)
+//------------------------------------------------------------------------------
+/**
+ * @brief Creates a matrix of zeros.
+ * 
+ * @param n_row Number of rows of the matrix to be created.
+ * @param n_column Number of columns of the matrix to be created.
+ * @return The created matrix.
+ */
 Matrix& zeros(const int n_row, const int n_column);
+
+//------------------------------------------------------------------------------
+// inv (Matrix &m)
+//------------------------------------------------------------------------------
+/**
+ * @brief Inverts a matrix.
+ * 
+ * @param m Matrix to be inverted.
+ * @return The inverted matrix.
+ */
 Matrix& inv (Matrix &m);
+
+//------------------------------------------------------------------------------
+// det (Matrix &m)
+//------------------------------------------------------------------------------
+/**
+ * @brief Calculates the determinant of a matrix.
+ * 
+ * @param m Matrix to calculate the determinant of.
+ * @return The determinant of the matrix.
+ */
 double det (Matrix &m);
+
+//------------------------------------------------------------------------------
+// eye (const int n)
+//------------------------------------------------------------------------------
+/**
+ * @brief Creates an identity matrix.
+ * 
+ * @param n Size of the identity matrix to be created.
+ * @return The created identity matrix.
+ */
+Matrix& eye(const int n);
 
 #endif
