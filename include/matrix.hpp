@@ -40,6 +40,16 @@ public:
 	/**
 	* @brief Creates a new matrix.
 	*
+	*/
+	//------------------------------------------------------------------------------
+    Matrix();
+	
+	//------------------------------------------------------------------------------
+	// Matrix(const int n_row, const int n_column)
+	//------------------------------------------------------------------------------
+	/**
+	* @brief Creates a new matrix.
+	*
 	* @param [in] n_row Number of rows of the matrix to be created.
 	* @param [in] n_column Number of columns of the matrix to be created.
 	*/
@@ -127,6 +137,17 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator / (Matrix &m);
+	
+	//------------------------------------------------------------------------------
+    // operator = (Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Copies another matrix in the current matrix.
+     * 
+     * @param m Matrix to be assigned.
+     * @return The resulting matrix.
+     */
+	Matrix& operator = (Matrix &m);
 	
 
 	// Non-member operators

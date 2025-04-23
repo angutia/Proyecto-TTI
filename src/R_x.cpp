@@ -1,4 +1,4 @@
-#include "..\include\matrix.h"
+#include "..\include\matrix.hpp"
 #include <cmath>
 
 Matrix& R_x(double angle){

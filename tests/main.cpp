@@ -1,10 +1,14 @@
-#include "..\include\matrix.h"
+#include "..\include\matrix.hpp"
 #include "..\include\R_x.hpp"
+#include "..\include\global.hpp"
 #include <iostream>
 
 using namespace std;
 
 int main() {
+	eop19620101(4); // c = 21413
+	cout << eopdata;
+	
 	Matrix aux = R_x(3);
 	cout << "aux\n" << aux << "\n";
 	
@@ -77,6 +81,11 @@ int main() {
 	m(2,1) = 2; m(2,2) = 3; m(2,3) = -1;
 	m(3,1) = 1; m(3,2) = 4; m(3,3) = 0;
 	cout << "det(m)\n" << det(m) << "\n";
+	
+	Matrix n = m;
+	n(1,1) = 9999;
+	cout << "m\n" << m << "\n";
+	cout << "n\n" << n << "\n";
 	
 
     return 0;
