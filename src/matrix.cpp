@@ -103,6 +103,18 @@ Matrix& Matrix::operator + (Matrix &m) {
 	return *m_aux;
 }
 
+Matrix& Matrix::operator + (double n) {
+	Matrix *m_aux = new Matrix(this->n_row, this->n_column);
+	
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*m_aux)(i,j) = (*this)(i,j) + n;
+		}
+	}
+	
+	return *m_aux;
+}
+
 Matrix& Matrix::operator - (Matrix &m) {
 	if (this->n_row != m.n_row || this->n_column != m.n_column) {
 		cout << "Matrix sub: error in n_row/n_column\n";
@@ -114,6 +126,18 @@ Matrix& Matrix::operator - (Matrix &m) {
     for(int i = 1; i <= this->n_row; i++) {
         for(int j = 1; j <= this->n_column; j++) {
 			(*m_aux)(i,j) = (*this)(i,j) - m(i,j);
+		}
+	}
+	
+	return *m_aux;
+}
+
+Matrix& Matrix::operator - (double n) {
+	Matrix *m_aux = new Matrix(this->n_row, this->n_column);
+	
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*m_aux)(i,j) = (*this)(i,j) - n;
 		}
 	}
 	
@@ -288,6 +312,19 @@ Matrix& eye(const int n) {
             } else {
                 (*m_aux)(i,j) = 0;
             }
+        }
+    }
+    
+    return (*m_aux);
+}
+
+
+Matrix& transpose(Matrix &m) {
+    Matrix *m_aux = new Matrix(m.n_column, m.n_row);
+    
+    for(int i = 1; i <= m.n_column; i++) {
+        for(int j = 1; j <= m.n_row; j++) {
+            (*m_aux)(i,j) = m(j,i);
         }
     }
     

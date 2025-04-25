@@ -104,6 +104,17 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator + (Matrix &m);
+	
+	//------------------------------------------------------------------------------
+    // operator + (double n)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Adds a double to each element of the current matrix.
+     * 
+     * @param n Double to be added.
+     * @return The resulting matrix.
+     */
+	Matrix& operator + (double n);
 
     //------------------------------------------------------------------------------
     // operator - (Matrix &m)
@@ -115,6 +126,17 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator - (Matrix &m);
+	
+	//------------------------------------------------------------------------------
+    // operator - (double n)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Subtracts a double from each element of the current matrix.
+     * 
+     * @param d Double to be subtracted.
+     * @return The resulting matrix.
+     */
+	Matrix& operator - (double n);
 
     //------------------------------------------------------------------------------
     // operator * (Matrix &m)
@@ -126,6 +148,17 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator * (Matrix &m);
+	
+	//------------------------------------------------------------------------------
+    // operator * (double n)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Multiplies each element of the current matrix by a double.
+     * 
+     * @param n Double to be multiplied.
+     * @return The resulting matrix.
+     */
+	Matrix& operator * (double n);
 
     //------------------------------------------------------------------------------
     // operator / (Matrix &m)
@@ -213,5 +246,16 @@ double det (Matrix &m);
  * @return The created identity matrix.
  */
 Matrix& eye(const int n);
+
+//------------------------------------------------------------------------------
+// transpose(Matrix &m)
+//------------------------------------------------------------------------------
+/**
+ * @brief Transposes a matrix.
+ * 
+ * @param m Matrix to be transposed.
+ * @return The transposed matrix.
+ */
+Matrix& transpose(Matrix &m);
 
 #endif
