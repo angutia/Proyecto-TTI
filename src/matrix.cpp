@@ -165,6 +165,18 @@ Matrix& Matrix::operator * (Matrix &m) {
 	return *m_aux;
 }
 
+Matrix& Matrix::operator * (double n) {
+	Matrix *m_aux = new Matrix(this->n_row, this->n_column);
+	
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+			(*m_aux)(i,j) = (*this)(i,j) * n;
+		}
+	}
+	
+	return *m_aux;
+}
+
 Matrix& Matrix::operator / (Matrix &m) {
 	if (m.n_column != m.n_row) {
 		cout << "Matrix div: error in n_row/n_column (non-square matrix)\n";
@@ -181,21 +193,60 @@ Matrix& Matrix::operator / (Matrix &m) {
 	return (*this)*m_aux;
 }
 
+Matrix& Matrix::operator / (double n) {
+    if (n == 0) {
+        cout << "Matrix div: division by zero\n";
+        exit(EXIT_FAILURE);
+    }
+
+    Matrix *m_aux = new Matrix(this->n_row, this->n_column);
+    
+    for(int i = 1; i <= this->n_row; i++) {
+        for(int j = 1; j <= this->n_column; j++) {
+            (*m_aux)(i,j) = (*this)(i,j) / n;
+        }
+    }
+    
+    return *m_aux;
+}
+
 Matrix& Matrix::operator = (Matrix &m) {
+
+    this->n_row = m.n_row;
+	this->n_column = m.n_column;
+    this->data = (double **) malloc(this->n_row*sizeof(double *));
 	
-	Matrix *m_aux = new Matrix(m.n_row, m.n_column);
+    if (this->data == NULL) {
+		cout << "Matrix create: error in data\n";
+        exit(EXIT_FAILURE);
+	}
 	
+	for(int i = 0; i < n_row; i++) {
+		this->data[i] = (double *) malloc(this->n_column*sizeof(double));
+	}
+
     for(int i = 1; i <= m.n_row; i++) {
         for(int j = 1; j <= m.n_column; j++) {
-			(*m_aux)(i,j) = m(i,j);
+			this->data[i - 1][j - 1] = m(i,j)+100;
 		}
 	}
 	
-	this->n_row = m_aux->n_row;
-	this->n_column = m_aux->n_column;
-	this->data = m_aux->data;
-	
 	return *this;
+}
+
+Matrix& Matrix::extract_vector(const int start, const int end) {
+    if (this->n_row > 1 || start < 1 || end > this->n_column || start > end) {
+        cout << "Matrix extract_vector: error in start/end\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    Matrix *m_aux = new Matrix(end - start + 1);
+    
+    for(int i = start; i <= end; i++) {
+        (*m_aux)(i - start + 1) = (*this)(i);
+    }
+    
+    return *m_aux;
 }
 
 ostream& operator << (ostream &o, Matrix &m) {
@@ -288,7 +339,6 @@ double det (Matrix &m) {
 	return aux_det;
 }
 
-
 Matrix& zeros(const int n_row, const int n_column) {
 	Matrix *m_aux = new Matrix(n_row, n_column);
 	
@@ -301,6 +351,15 @@ Matrix& zeros(const int n_row, const int n_column) {
 	return (*m_aux);
 }
 
+Matrix& zeros(const int n) {
+    Matrix *m_aux = new Matrix(n);
+    
+    for(int i = 1; i <= n; i++) {
+        (*m_aux)(i) = 0;
+    }
+    
+    return (*m_aux);
+}
 
 Matrix& eye(const int n) {
     Matrix *m_aux = new Matrix(n, n);
@@ -318,7 +377,6 @@ Matrix& eye(const int n) {
     return (*m_aux);
 }
 
-
 Matrix& transpose(Matrix &m) {
     Matrix *m_aux = new Matrix(m.n_column, m.n_row);
     
@@ -327,6 +385,85 @@ Matrix& transpose(Matrix &m) {
             (*m_aux)(i,j) = m(j,i);
         }
     }
+    
+    return (*m_aux);
+}
+
+double norm(Matrix &m) {
+    if (m.n_row == 1 || m.n_column == 1) {
+        double aux = 0.0;    
+        for(int i = 1; i <= m.n_row; i++) {
+            for(int j = 1; j <= m.n_column; j++) {
+                aux += pow(m(i,j),2);
+            }
+        }        
+        return sqrt(aux);
+    }
+    // Compute M^T * M
+    Matrix mt = transpose(m);
+    Matrix mtm = mt * m;
+    
+    // Use power iteration method to find largest eigenvalue
+    Matrix v = zeros(m.n_column, 1);  // Initial vector
+    v(1,1) = 1.0;  // Set first element to 1
+    
+    const int MAX_ITER = 100;
+    const double TOLERANCE = 1e-10;
+    double lambda_old = 0.0;
+    
+    for(int iter = 0; iter < MAX_ITER; iter++) {
+        // w = M^T * M * v
+        Matrix w = mtm * v;
+        
+        // Find largest element for normalization
+        double norm_w = norm(w);
+        
+        // Normalize w
+        Matrix v_new = w / norm_w;
+        
+        // Estimate eigenvalue
+        double lambda = norm(w) / norm(v);
+        
+        // Check convergence
+        if(fabs(lambda - lambda_old) < TOLERANCE) {
+            return sqrt(lambda);  // Return square root as it's the singular value
+        }
+        
+        lambda_old = lambda;
+        v = v_new;
+    }
+
+    cout << "Matrix norm error: did not converge\n";
+    exit(EXIT_FAILURE);
+    return -1.0;  // Error: did not converge    
+}
+
+double dot(Matrix &v1, Matrix &v2) {
+    if (v1.n_column != v2.n_column || v1.n_row != 1 || v2.n_row != 1) {
+        cout << "Matrix dot: error in n_row/n_column\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    double aux = 0.0;
+    
+    for(int i = 1; i <= v1.n_column; i++) {
+        aux += v1(i) * v2(i);
+    }
+    
+    return aux;
+}
+
+Matrix& cross(Matrix &v1, Matrix &v2) {
+    if (v1.n_column != 3 || v2.n_column != 3 || v1.n_row != 1 || v2.n_row != 1) {
+        cout << "Matrix cross: error in n_row/n_column\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    Matrix *m_aux = new Matrix(3);
+    
+    (*m_aux)(1) = v1(2) * v2(3) - v1(3) * v2(2);
+    (*m_aux)(2) = v1(3) * v2(1) - v1(1) * v2(3);
+    (*m_aux)(3) = v1(1) * v2(2) - v1(2) * v2(1);
     
     return (*m_aux);
 }

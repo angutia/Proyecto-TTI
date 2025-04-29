@@ -170,6 +170,17 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator / (Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // operator / (double n)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Divides each element of the current matrix by a double.
+     * 
+     * @param n Double to be divided.
+     * @return The resulting matrix.
+     */
+    Matrix& operator / (double n);
 	
 	//------------------------------------------------------------------------------
     // operator = (Matrix &m)
@@ -181,6 +192,20 @@ public:
      * @return The resulting matrix.
      */
 	Matrix& operator = (Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // extract_vector(const int start, const int end)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Extracts a vector from the current vector.
+     * 
+     * @param start Starting index of the vector to be extracted.
+     * @param end Ending index of the vector to be extracted.
+     * @return The extracted vector.
+     */
+    Matrix& extract_vector(const int start, const int end);
+
+
 	
 
 	// Non-member operators
@@ -213,6 +238,17 @@ ostream& operator << (ostream &o, Matrix &m);
  * @return The created matrix.
  */
 Matrix& zeros(const int n_row, const int n_column);
+
+//------------------------------------------------------------------------------
+// zeros(const int n)
+//------------------------------------------------------------------------------
+/**
+ * @brief Creates a vector of zeros.
+ * 
+ * @param n Number of elements of the vector to be created.
+ * @return The created vector.
+ */
+Matrix& zeros(const int n);
 
 //------------------------------------------------------------------------------
 // inv (Matrix &m)
@@ -257,5 +293,40 @@ Matrix& eye(const int n);
  * @return The transposed matrix.
  */
 Matrix& transpose(Matrix &m);
+
+//------------------------------------------------------------------------------
+// norm(Matrix &m)
+//------------------------------------------------------------------------------
+/**
+ * @brief Calculates the norm of a matrix.
+ * 
+ * @param m Matrix to calculate the norm of.
+ * @return The norm of the matrix.
+ */
+double norm(Matrix &m);
+
+//------------------------------------------------------------------------------
+// dot(Matrix &v1, Matrix &v2)
+//------------------------------------------------------------------------------
+/**
+ * @brief Calculates the dot product of two vectors.
+ * 
+ * @param m1 First vector to calculate the dot product of.
+ * @param m2 Second vector to calculate the dot product of.
+ * @return The dot product of the two vectors.
+ */
+double dot(Matrix &v1, Matrix &v2);
+
+//------------------------------------------------------------------------------
+// cross(Matrix &v1, Matrix &v2)
+//------------------------------------------------------------------------------
+/**
+ * @brief Calculates the cross product of two vectors.
+ * 
+ * @param v1 First vector to calculate the cross product of.
+ * @param v2 Second vector to calculate the cross product of.
+ * @return The cross product of the two vectors.
+ */
+Matrix& cross(Matrix &v1, Matrix &v2);
 
 #endif
