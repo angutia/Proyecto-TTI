@@ -8,9 +8,4 @@ Matrix& R_x(double angle);
 
 
 
-
-
-
-
-
 #endif

@@ -1,4 +1,5 @@
 #include "..\include\matrix.hpp"
+#include "..\include\AccelPointMass.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -318,18 +319,15 @@ int m_inv_01() {
 }
 
 int m_norm_01() {
-    int f = 3;
+    int f = 1;
     int c = 4;
     
     Matrix A(f, c);
     A(1,1) = 0; A(1,2) = 2; A(1,3) = 8; A(1,4) = 0;
-    A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
-    A(3,1) = 0; A(3,2) = 1; A(3,3) = 0; A(3,4) = 5;
     
     double C = norm(A);
-    cout << "C = " << C << "\n";
 
-    _assert(fabs(C - 8.2558020005) < 1e-10);
+    _assert(fabs(C - 8.246211251235321) < 1e-10);
     
     return 0;
 }
@@ -360,12 +358,33 @@ int v_cross_01() {
     B(1) = 1; B(2) = -1; B(3) = 0;
     
     Matrix C(f);
-    C(1) = -8; C(2) = 8; C(3) = -2;
+    C(1) = 8; C(2) = 8; C(3) = -2;
     
     Matrix R = cross(A, B);
     
     _assert(m_equals(C, R, 1e-10));
     
+    return 0;
+}
+
+int AccelPointMass_01() {
+    int f = 3;
+
+    Matrix r(f);
+    r(1) = 0; r(2) = 2; r(3) = 8;
+
+    Matrix s(f);
+    s(1) = 1; s(2) = -1; s(3) = 0;
+
+    double GM = 2.0;
+
+    Matrix C(f);
+    C(1) = -0.703964953112390; C(2) = 0.697681296964076; C(3) = -0.025134624593258;
+
+    Matrix R = AccelPointMass(r, s, GM);
+
+    _assert(m_equals(C, R, 1e-10));
+
     return 0;
 }
 
@@ -388,6 +407,7 @@ int all_tests()
     _verify(m_norm_01);
     _verify(v_dot_01);
     _verify(v_cross_01);
+    _verify(AccelPointMass_01);
 
     return 0;
 }

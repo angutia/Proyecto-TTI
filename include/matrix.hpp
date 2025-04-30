@@ -8,7 +8,7 @@
 //
 // Created: 2025/03/28
 //
-/** @file matrix.h
+/** @file matrix.hpp
 *   @brief This header contains the matrix operations.
 *
 *   @author Ander Gutiérrez Andrés.
