@@ -9,7 +9,7 @@
 // Created: 2025/03/28
 //
 /** @file AccelPointMass.cpp
-*   @brief Source of the AccelPointMass operation.
+*   @brief Source of the AccelPointMass operation. It computes the perturbational acceleration due to a point mass.
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.

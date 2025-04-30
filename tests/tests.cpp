@@ -1,5 +1,6 @@
 #include "..\include\matrix.hpp"
 #include "..\include\AccelPointMass.hpp"
+#include "..\include\Cheb3D.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -388,6 +389,31 @@ int AccelPointMass_01() {
     return 0;
 }
 
+int Cheb3D_01() {
+    int f = 3;
+
+    int t = 1;
+    int N = 3;
+    int Ta = 0;
+    int Tb = 3;
+    Matrix Cx(f);
+    Cx(1) = 0; Cx(2) = 2; Cx(3) = 8;
+    Matrix Cy(f);
+    Cy(1) = 1; Cy(2) = -1; Cy(3) = 0;
+    Matrix Cz(f);
+    Cz(1) = 0; Cz(2) = 1; Cz(3) = 5;
+
+    Matrix C(f);
+    C(1) = -6.888888888888889; C(2) = 1.333333333333333; C(3) = -4.222222222222222;
+
+    Matrix R = Cheb3D(t, N, Ta, Tb, Cx, Cy, Cz);
+    cout << R << endl;
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -408,6 +434,7 @@ int all_tests()
     _verify(v_dot_01);
     _verify(v_cross_01);
     _verify(AccelPointMass_01);
+    _verify(Cheb3D_01);
 
     return 0;
 }

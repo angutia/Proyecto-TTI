@@ -227,7 +227,7 @@ Matrix& Matrix::operator = (Matrix &m) {
 
     for(int i = 1; i <= m.n_row; i++) {
         for(int j = 1; j <= m.n_column; j++) {
-			this->data[i - 1][j - 1] = m(i,j)+100;
+			this->data[i - 1][j - 1] = m(i,j);
 		}
 	}
 	
