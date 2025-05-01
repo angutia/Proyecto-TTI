@@ -5,6 +5,7 @@
 #include <cmath>
 
 extern Matrix eopdata;
+extern double eps;
 
 void eop19620101(int c);
 

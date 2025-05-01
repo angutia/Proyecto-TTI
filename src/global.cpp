@@ -1,6 +1,7 @@
 #include "..\include\global.hpp"
 
 Matrix eopdata;
+double eps = 2.2204e-16;
 
 void eop19620101(int c){
 	eopdata = zeros(13,c);

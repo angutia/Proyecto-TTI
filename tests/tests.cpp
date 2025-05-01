@@ -1,6 +1,7 @@
 #include "..\include\matrix.hpp"
 #include "..\include\AccelPointMass.hpp"
 #include "..\include\Cheb3D.hpp"
+#include "..\include\EccAnom.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -407,9 +408,21 @@ int Cheb3D_01() {
     C(1) = -6.888888888888889; C(2) = 1.333333333333333; C(3) = -4.222222222222222;
 
     Matrix R = Cheb3D(t, N, Ta, Tb, Cx, Cy, Cz);
-    cout << R << endl;
 
     _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int EccAnom_01(){
+    double M = 2.93;
+    double e = 0.76;
+
+    double C = 3.021244195604439;
+
+    double R = EccAnom(M, e);
+
+    _assert(fabs(C - R) < 1e-10);
 
     return 0;
 }
@@ -435,6 +448,7 @@ int all_tests()
     _verify(v_cross_01);
     _verify(AccelPointMass_01);
     _verify(Cheb3D_01);
+    _verify(EccAnom_01);
 
     return 0;
 }
