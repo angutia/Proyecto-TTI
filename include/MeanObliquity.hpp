@@ -1,6 +1,6 @@
 // $Header$
 //------------------------------------------------------------------------------
-// EccAnom
+// MeanObliquity
 //------------------------------------------------------------------------------
 // ProyectoTTI: Proyecto Taller Transversal I
 //
@@ -8,32 +8,30 @@
 //
 // Created: 2025/03/28
 //
-/** @file EccAnom.hpp
-*   @brief This header contains the EccAnom operation. It computes the eccentric anomaly for elliptic orbits.
+/** @file MeanObliquity.hpp
+*   @brief This header contains the MeanObliquity operation. It computes the mean obliquity of the ecliptic.
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.
 */
 //------------------------------------------------------------------------------
 
-#ifndef _ECCANOM_
-#define _ECCANOM_
+#ifndef _MEANOBLIQUITY_
+#define _MEANOBLIQUITY_
 
-#include "..\include\matrix.hpp"
 #include <cmath>
 
 //------------------------------------------------------------------------------
-// EccAnom(double M, double e)
+// MeanObliquity(double Mjd_TT)
 //-------------------------------------------------------------------------------
 /**
-* @brief Computes the eccentric anomaly for elliptic orbits.
+* @brief Computes the mean obliquity of the ecliptic.
 *
-* @param [in] M Mean anomaly in [rad].
-* @param [in] e Eccentricity of the orbit [0,1].
-* @return Eccentric anomaly in [rad].
+* @param [in] Mjd_TT Modified Julian Date (Terrestrial Time).
+* @return Mean obliquity of the ecliptic [rad].
 */
 //------------------------------------------------------------------------------
-double EccAnom (double M, double e);
+double MeanObliquity (double Mjd_TT);
 
 
 

@@ -9,7 +9,7 @@
 // Created: 2025/03/28
 //
 /** @file EccAnom.cpp
-*   @brief Source of the EccAnom operation. Chebyshev approximation of 3-dimensional vectors.
+*   @brief Source of the EccAnom operation. It computes the eccentric anomaly for elliptic orbits.
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.

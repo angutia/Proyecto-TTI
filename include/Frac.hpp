@@ -1,6 +1,6 @@
 // $Header$
 //------------------------------------------------------------------------------
-// EccAnom
+// Frac
 //------------------------------------------------------------------------------
 // ProyectoTTI: Proyecto Taller Transversal I
 //
@@ -8,32 +8,30 @@
 //
 // Created: 2025/03/28
 //
-/** @file EccAnom.hpp
-*   @brief This header contains the EccAnom operation. It computes the eccentric anomaly for elliptic orbits.
+/** @file Frac.hpp
+*   @brief This header contains the Frac operation. It computes the fractional part of a number (y=x-[x]).
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.
 */
 //------------------------------------------------------------------------------
 
-#ifndef _ECCANOM_
-#define _ECCANOM_
+#ifndef _FRAC_
+#define _FRAC_
 
-#include "..\include\matrix.hpp"
 #include <cmath>
 
 //------------------------------------------------------------------------------
-// EccAnom(double M, double e)
+// Frac(double x)
 //-------------------------------------------------------------------------------
 /**
-* @brief Computes the eccentric anomaly for elliptic orbits.
+* @brief Computes the fractional part of a number.
 *
-* @param [in] M Mean anomaly in [rad].
-* @param [in] e Eccentricity of the orbit [0,1].
-* @return Eccentric anomaly in [rad].
+* @param [in] x Input number.
+* @return Fractional part of the input number (y=x-[x]).
 */
 //------------------------------------------------------------------------------
-double EccAnom (double M, double e);
+double Frac(double x);
 
 
 

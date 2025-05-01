@@ -1,7 +1,9 @@
 #include "..\include\matrix.hpp"
+#include "..\include\global.hpp"
 #include "..\include\AccelPointMass.hpp"
 #include "..\include\Cheb3D.hpp"
 #include "..\include\EccAnom.hpp"
+#include "..\include\Frac.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -427,6 +429,18 @@ int EccAnom_01(){
     return 0;
 }
 
+int Frac_01() {
+    double x = 1.5632498;
+
+    double C = 0.5632498;
+
+    double R = Frac(x);
+
+    _assert(fabs(C - R) < 1e-10);
+
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -449,6 +463,7 @@ int all_tests()
     _verify(AccelPointMass_01);
     _verify(Cheb3D_01);
     _verify(EccAnom_01);
+    _verify(Frac_01);
 
     return 0;
 }
