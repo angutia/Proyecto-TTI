@@ -249,6 +249,58 @@ Matrix& Matrix::extract_vector(const int start, const int end) {
     return *m_aux;
 }
 
+Matrix& Matrix::extract_row(const int row) {
+    if (row < 1 || row > this->n_row) {
+        cout << "Matrix extract_row: error in row\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    Matrix *m_aux = new Matrix(this->n_column);
+    
+    for(int i = 1; i <= this->n_column; i++) {
+        (*m_aux)(i) = (*this)(row,i);
+    }
+    
+    return *m_aux;
+}
+
+Matrix& Matrix::extract_column(const int column) {
+    if (column < 1 || column > this->n_column) {
+        cout << "Matrix extract_column: error in column\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    Matrix *m_aux = new Matrix(this->n_row);
+    
+    for(int i = 1; i <= this->n_row; i++) {
+        (*m_aux)(i) = (*this)(i,column);
+    }
+    
+    return *m_aux;
+}
+
+void Matrix::assign_row(const int row, Matrix &m) {
+    if (row < 1 || row > this->n_row || m.n_column != this->n_column || m.n_row != 1) {
+        cout << "Matrix assign_row: error in row\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    for(int i = 1; i <= this->n_column; i++) {
+        (*this)(row,i) = m(i);
+    }
+}
+
+void Matrix::assign_column(const int column, Matrix &m) {
+    if (column < 1 || column > this->n_column || m.n_column != this->n_row || m.n_row != 1) {
+        cout << "Matrix assign_column: error in column\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    for(int i = 1; i <= this->n_row; i++) {
+        (*this)(i,column) = m(i);
+    }
+}
+
 ostream& operator << (ostream &o, Matrix &m) {
 	for (int i = 1; i <= m.n_row; i++) {
         for (int j = 1; j <= m.n_column; j++)
@@ -464,6 +516,26 @@ Matrix& cross(Matrix &v1, Matrix &v2) {
     (*m_aux)(1) = v1(2) * v2(3) - v1(3) * v2(2);
     (*m_aux)(2) = v1(3) * v2(1) - v1(1) * v2(3);
     (*m_aux)(3) = v1(1) * v2(2) - v1(2) * v2(1);
+    
+    return (*m_aux);
+}
+
+Matrix& union_vector(Matrix& v1, Matrix& v2) {
+    if (v1.n_row != 1 || v2.n_row != 1) {
+        cout << "Matrix union_vector: error in n_row\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    int new_size = v1.n_column + v2.n_column;
+    Matrix *m_aux = new Matrix(new_size);
+    
+    for(int i = 1; i <= v1.n_column; i++) {
+        (*m_aux)(i) = v1(i);
+    }
+    
+    for(int i = 1; i <= v2.n_column; i++) {
+        (*m_aux)(i + v1.n_column) = v2(i);
+    }
     
     return (*m_aux);
 }

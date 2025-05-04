@@ -205,6 +205,49 @@ public:
      */
     Matrix& extract_vector(const int start, const int end);
 
+    //------------------------------------------------------------------------------
+    // extract_row(const int row)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Extracts a row from the current matrix.
+     * 
+     * @param row Row to be extracted.
+     * @return The extracted row.
+     */
+    Matrix& extract_row(const int row);
+
+    //------------------------------------------------------------------------------
+    // extract_column(const int column)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Extracts a column from the current matrix.
+     * 
+     * @param column Column to be extracted.
+     * @return The extracted column.
+     */
+    Matrix& extract_column(const int column);
+
+    //------------------------------------------------------------------------------
+    // assign_row(const int row, Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Assigns a vector to a row of the current matrix.
+     * 
+     * @param row Row to be assigned.
+     * @param m Vector to be assigned.
+     */
+    void assign_row(const int row, Matrix &m);
+
+    //------------------------------------------------------------------------------
+    // assign_column(const int column, Matrix &m)
+    //------------------------------------------------------------------------------
+    /**
+     * @brief Assigns a vector to a column of the current matrix.
+     * 
+     * @param column Column to be assigned.
+     * @param m Vector to be assigned.
+     */
+    void assign_column(const int column, Matrix &m);
 
 	
 
@@ -328,5 +371,17 @@ double dot(Matrix &v1, Matrix &v2);
  * @return The cross product of the two vectors.
  */
 Matrix& cross(Matrix &v1, Matrix &v2);
+
+//------------------------------------------------------------------------------
+// union_vector(Matrix& v1, Matrix& v2)
+//------------------------------------------------------------------------------
+/**
+ * @brief Concatenates two vectors into a single vector.
+ * 
+ * @param v1 First vector to be concatenated.
+ * @param v2 Second vector to be concatenated.
+ * @return The concatenated vector.
+ */
+Matrix& union_vector(Matrix& v1, Matrix& v2);
 
 #endif

@@ -234,6 +234,92 @@ int v_extract_vector_01() {
     return 0;
 }
 
+int m_extract_row_01() {
+    int f = 3;
+    int c = 4;
+    
+    Matrix A(f, c);
+    A(1,1) = 0; A(1,2) = 2; A(1,3) = 8; A(1,4) = 0;
+    A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+    A(3,1) = 0; A(3,2) = 1; A(3,3) = 0; A(3,4) = 5;
+    
+    Matrix B = A.extract_row(2);
+    
+    Matrix C(c);
+    C(1) = 1; C(2) = -1; C(3) = 0; C(4) = 0;
+    
+    _assert(m_equals(B, C, 1e-10));
+    
+    return 0;
+}
+
+int m_extract_column_01() {
+    int f = 3;
+    int c = 4;
+    
+    Matrix A(f, c);
+    A(1,1) = 0; A(1,2) = 2; A(1,3) = 8; A(1,4) = 0;
+    A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+    A(3,1) = 0; A(3,2) = 1; A(3,3) = 0; A(3,4) = 5;
+    
+    Matrix B = A.extract_column(2);
+    
+    Matrix C(f);
+    C(1) = 2; C(2) = -1; C(3) = 1;
+    
+    _assert(m_equals(B, C, 1e-10));
+    
+    return 0;
+}
+
+int m_assign_row_01() {
+    int f = 3;
+    int c = 4;
+    
+    Matrix A(f, c);
+    A(1,1) = 0; A(1,2) = 2; A(1,3) = 8; A(1,4) = 0;
+    A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+    A(3,1) = 0; A(3,2) = 1; A(3,3) = 0; A(3,4) = 5;
+    
+    Matrix B(c);
+    B(1) = 10; B(2) = -10; B(3) = -10; B(4) = 0;
+
+    Matrix C(f, c);
+    C(1,1) = 0; C(1,2) = 2; C(1,3) = 8; C(1,4) = 0;
+    C(2,1) = 10; C(2,2) = -10; C(2,3) = -10; C(2,4) = 0;
+    C(3,1) = 0; C(3,2) = 1; C(3,3) = 0; C(3,4) = 5;
+    
+    A.assign_row(2, B);
+    
+    _assert(m_equals(A, C, 1e-10));
+    
+    return 0;
+}
+
+int m_assign_column_01() {
+    int f = 3;
+    int c = 4;
+    
+    Matrix A(f, c);
+    A(1,1) = 0; A(1,2) = 2; A(1,3) = 8; A(1,4) = 0;
+    A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+    A(3,1) = 0; A(3,2) = 1; A(3,3) = 0; A(3,4) = 5;
+    
+    Matrix B(f);
+    B(1) = 10; B(2) = -10; B(3) = -10;
+
+    Matrix C(f, c);
+    C(1,1) = 10; C(1,2) = 2; C(1,3) = 8; C(1,4) = 0;
+    C(2,1) = -10; C(2,2) = -1; C(2,3) = 0; C(2,4) = 0;
+    C(3,1) = -10; C(3,2) = 1; C(3,3) = 0; C(3,4) = 5;
+    
+    A.assign_column(1, B);
+    
+    _assert(m_equals(A, C, 1e-10));
+    
+    return 0;
+}
+
 int m_zeros_01() {
     int f = 3;
     int c = 4;
@@ -371,6 +457,25 @@ int v_cross_01() {
     return 0;
 }
 
+int v_union_vector_01() {
+    int f = 3;
+    
+    Matrix A(f);
+    A(1) = 0; A(2) = 2; A(3) = 8;
+    
+    Matrix B(f);
+    B(1) = 1; B(2) = -1; B(3) = 0;
+    
+    Matrix C(f + f);
+    C(1) = 0; C(2) = 2; C(3) = 8; C(4) = 1; C(5) = -1; C(6) = 0;
+    
+    Matrix R = union_vector(A, B);
+    
+    _assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
 int AccelPointMass_01() {
     int f = 3;
 
@@ -452,6 +557,10 @@ int all_tests()
     _verify(m_div_01);
     _verify(m_divn_01);
     _verify(v_extract_vector_01);
+    _verify(m_extract_row_01);
+    _verify(m_extract_column_01);
+    _verify(m_assign_row_01);
+    _verify(m_assign_column_01);
     _verify(m_zeros_01);
     _verify(v_zeros_01);
 	_verify(m_eye_01);
@@ -460,6 +569,7 @@ int all_tests()
     _verify(m_norm_01);
     _verify(v_dot_01);
     _verify(v_cross_01);
+    _verify(v_union_vector_01);
     _verify(AccelPointMass_01);
     _verify(Cheb3D_01);
     _verify(EccAnom_01);
