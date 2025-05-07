@@ -1,6 +1,6 @@
 // $Header$
 //------------------------------------------------------------------------------
-// MeanObliquity
+// Position
 //------------------------------------------------------------------------------
 // ProyectoTTI: Proyecto Taller Transversal I
 //
@@ -8,29 +8,33 @@
 //
 // Created: 2025/03/28
 //
-/** @file MeanObliquity.hpp
-*   @brief This header contains the MeanObliquity operation. It computes the mean obliquity of the ecliptic.
+/** @file Position.hpp
+*   @brief This header contains the Position operation. Computes the position vector (r [m]) from geodetic coordinates (Longitude [rad], latitude [rad], altitude [m]).
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.
 */
 //------------------------------------------------------------------------------
 
-#ifndef _MEANOBLIQUITY_
-#define _MEANOBLIQUITY_
+#ifndef _POSITION_
+#define _POSITION_
 
+#include "..\include\matrix.hpp"
+#include <cmath>
 
 //------------------------------------------------------------------------------
-// MeanObliquity(double Mjd_TT)
+// Position(double lon, double lat, double h)
 //-------------------------------------------------------------------------------
 /**
-* @brief Computes the mean obliquity of the ecliptic.
+* @brief Computes the position vector (r [m]) from geodetic coordinates (Longitude [rad], latitude [rad], altitude [m]).
 *
-* @param [in] Mjd_TT Modified Julian Date (Terrestrial Time).
-* @return Mean obliquity of the ecliptic [rad].
+* @param [in] lon Longitude [rad].
+* @param [in] lat Latitude [rad].
+* @param [in] h Altitude [m].
+* @return Position vector (r [m]).
 */
 //------------------------------------------------------------------------------
-double MeanObliquity (double Mjd_TT);
+Matrix& Position(double lon, double lat, double h);
 
 
 

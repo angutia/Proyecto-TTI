@@ -1,6 +1,6 @@
 // $Header$
 //------------------------------------------------------------------------------
-// MeanObliquity
+// R_z
 //------------------------------------------------------------------------------
 // ProyectoTTI: Proyecto Taller Transversal I
 //
@@ -8,29 +8,31 @@
 //
 // Created: 2025/03/28
 //
-/** @file MeanObliquity.hpp
-*   @brief This header contains the MeanObliquity operation. It computes the mean obliquity of the ecliptic.
+/** @file R_z.hpp
+*   @brief This header contains the R_z operation. Computes the rotation matrix around the z-axis.
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.
 */
 //------------------------------------------------------------------------------
 
-#ifndef _MEANOBLIQUITY_
-#define _MEANOBLIQUITY_
+#ifndef _R_Z_
+#define _R_Z_
 
+#include "..\include\matrix.hpp"
+#include <cmath>
 
 //------------------------------------------------------------------------------
-// MeanObliquity(double Mjd_TT)
+// R_z(double angle)
 //-------------------------------------------------------------------------------
 /**
-* @brief Computes the mean obliquity of the ecliptic.
+* @brief Computes the rotation matrix around the z-axis.
 *
-* @param [in] Mjd_TT Modified Julian Date (Terrestrial Time).
-* @return Mean obliquity of the ecliptic [rad].
+* @param [in] angle Angle of rotation [rad].
+* @return Vector result.
 */
 //------------------------------------------------------------------------------
-double MeanObliquity (double Mjd_TT);
+Matrix& R_z(double angle);
 
 
 

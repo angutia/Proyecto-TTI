@@ -1,11 +1,7 @@
-#define _USE_MATH_DEFINES
 #include "..\include\global.hpp"
-#include <cmath>
 
 Matrix eopdata;
 double eps = 2.2204e-16;
-double MJD_J2000 = 51544.5; 
-double Rad = M_PI/180;
 
 void eop19620101(int c){
 	eopdata = zeros(13,c);

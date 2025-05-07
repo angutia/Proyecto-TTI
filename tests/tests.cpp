@@ -4,6 +4,13 @@
 #include "..\include\Cheb3D.hpp"
 #include "..\include\EccAnom.hpp"
 #include "..\include\Frac.hpp"
+#include "..\include\MeanObliquity.hpp"
+#include "..\include\Mjday.hpp"
+#include "..\include\Mjday_TDB.hpp"
+#include "..\include\Position.hpp"
+#include "..\include\R_x.hpp"
+#include "..\include\R_y.hpp"
+#include "..\include\R_z.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -546,6 +553,116 @@ int Frac_01() {
     return 0;
 }
 
+int MeanObliquity_01() {
+    double Mjd_TT = 58000.0;
+
+    double C = 0.40905268985035;
+
+    double R = MeanObliquity(Mjd_TT);
+
+    _assert(fabs(C - R) < 1e-10);
+
+    return 0;
+}
+
+int Mjday_01() {
+    double yr = 2025;
+    double mon = 3;
+    double day = 28;
+
+    double C = 60762;
+
+    double R = Mjday(yr, mon, day);
+
+    _assert(fabs(C - R) < 1e-10);
+
+
+    double hr = 16;
+    double min = 24;
+    double sec = 16;
+
+    C = 60762.6835185187;
+
+    R = Mjday(yr, mon, day, hr, min, sec);
+
+    _assert(fabs(C - R) < 1e-10);
+
+    return 0;
+}
+
+int Mjday_TDB_01() {
+    double Mjd_TT = 58000.0;
+
+    double C = 57999.9999999833;
+
+    double R = Mjday_TDB(Mjd_TT);
+
+    _assert(fabs(C - R) < 1e-10);
+
+    return 0;
+}
+
+int Position_01() {
+    double x = 235.35;
+    double y = 2344;
+    double z = 90.13;
+
+    Matrix C(3);
+    C(1) = -5730370.47656876; C(2) = 1582528.00953351; C(3) = 2303146.25187731;
+
+    Matrix R = Position(x,y,z);
+
+    _assert(m_equals(C, R, 1e-6));
+
+    return 0;
+}
+
+int R_x_01() {
+    double angle = 0.5;
+
+    Matrix C(3, 3);
+    C(1,1) = 1; C(1,2) = 0; C(1,3) = 0;
+    C(2,1) = 0; C(2,2) = 0.877582561890373; C(2,3) = 0.479425538604203;
+    C(3,1) = 0; C(3,2) = -0.479425538604203; C(3,3) = 0.877582561890373;
+
+    Matrix R = R_x(angle);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int R_y_01() {
+    double angle = 0.4;
+
+    Matrix C(3, 3);
+    C(1,1) = 0.921060994002885; C(1,2) = 0; C(1,3) = -0.389418342308651;
+    C(2,1) = 0; C(2,2) = 1; C(2,3) = 0;
+    C(3,1) = 0.389418342308651; C(3,2) = 0; C(3,3) = 0.921060994002885;
+
+    Matrix R = R_y(angle);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int R_z_01() {
+    double angle = 0.3;
+
+    Matrix C(3, 3);
+    C(1,1) = 0.955336489125606; C(1,2) = 0.29552020666134; C(1,3) = 0;
+    C(2,1) = -0.29552020666134; C(2,2) = 0.955336489125606; C(2,3) = 0;
+    C(3,1) = 0; C(3,2) = 0; C(3,3) = 1;
+
+    Matrix R = R_z(angle);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -574,6 +691,13 @@ int all_tests()
     _verify(Cheb3D_01);
     _verify(EccAnom_01);
     _verify(Frac_01);
+    _verify(MeanObliquity_01);
+    _verify(Mjday_01);
+    _verify(Mjday_TDB_01);
+    _verify(Position_01);
+    _verify(R_x_01);
+    _verify(R_y_01);
+    _verify(R_z_01);
 
     return 0;
 }
