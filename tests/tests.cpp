@@ -11,6 +11,9 @@
 #include "..\include\R_x.hpp"
 #include "..\include\R_y.hpp"
 #include "..\include\R_z.hpp"
+#include "..\include\sign_.hpp"
+#include "..\include\timediff.hpp"
+#include "..\include\AzElPa.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -662,6 +665,71 @@ int R_z_01() {
     return 0;
 }
 
+int sign__01(){
+    double a = 5.3;
+    double b = -2;
+    double c = 9.7;
+
+    double C = -5.3;
+    double R = sign_(a,b);
+
+    _assert(fabs(C - R) < 1e-10);
+
+    C = 5.3;
+    R = sign_(a,c);
+    _assert(fabs(C - R) < 1e-10);
+
+    return 0;
+}
+
+int timediff_01() {
+    double UT1_UTC = 24.63;
+    double TAI_UTC = 9.71;
+
+    double A = 14.92;
+    double B = 9.29;
+    double C = 33.92;
+    double D = 41.894;
+    double E = -9.29;
+
+    auto [a,b,c,d,e] = timediff(UT1_UTC, TAI_UTC);
+    
+    _assert(fabs(A - a) < 1e-10);
+    _assert(fabs(B - b) < 1e-10);
+    _assert(fabs(C - c) < 1e-10);
+    _assert(fabs(D - d) < 1e-10);
+    _assert(fabs(E - e) < 1e-10);
+
+    return 0;
+}
+
+int AzElPa_01() {
+    Matrix s(3);
+    s(1) = 2; s(2) = 3; s(3) = 4;
+
+    double A = 0.588002603547568;
+    double B = 0.837215003154814;
+    Matrix C(3);
+    C(1) = 0.230769230769231; C(2) = -0.153846153846154; C(3) = 0;
+    Matrix D(3);
+    D(1) = -0.0765103718931351; D(2) = -0.114765557839703; D(3) = 0.124329354326344;
+
+    double a,b;
+    Matrix c,d;
+    tie (a,b,c,d) = AzElPa(s);
+
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+    cout << "c: " << c << endl;
+    cout << "d: " << d << endl;
+    _assert(fabs(A - a) < 1e-10);
+    _assert(fabs(B - b) < 1e-10);
+    _assert(m_equals(C, c, 1e-10));
+    _assert(m_equals(D, d, 1e-10));
+    
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -698,6 +766,9 @@ int all_tests()
     _verify(R_x_01);
     _verify(R_y_01);
     _verify(R_z_01);
+    _verify(sign__01);
+    _verify(timediff_01);
+    _verify(AzElPa_01);
 
     return 0;
 }
