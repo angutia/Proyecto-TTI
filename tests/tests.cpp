@@ -714,14 +714,8 @@ int AzElPa_01() {
     Matrix D(3);
     D(1) = -0.0765103718931351; D(2) = -0.114765557839703; D(3) = 0.124329354326344;
 
-    double a,b;
-    Matrix c,d;
-    tie (a,b,c,d) = AzElPa(s);
+    auto [a,b,c,d] = AzElPa(s);
 
-    cout << "a: " << a << endl;
-    cout << "b: " << b << endl;
-    cout << "c: " << c << endl;
-    cout << "d: " << d << endl;
     _assert(fabs(A - a) < 1e-10);
     _assert(fabs(B - b) < 1e-10);
     _assert(m_equals(C, c, 1e-10));

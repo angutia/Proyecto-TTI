@@ -38,7 +38,7 @@ Matrix::Matrix(const int v_size) {
 	this->data = (double **) malloc(n_row*sizeof(double *));
 	
     if (this->data == NULL) {
-		cout << "Matrix create: error in data\n";
+		cout << "Vector create: error in data\n";
         exit(EXIT_FAILURE);
 	}
 	
