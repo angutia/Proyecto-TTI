@@ -14,6 +14,7 @@
 #include "..\include\sign_.hpp"
 #include "..\include\timediff.hpp"
 #include "..\include\AzElPa.hpp"
+#include "..\include\IERS.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -724,6 +725,34 @@ int AzElPa_01() {
     return 0;
 }
 
+int IERS_01() {
+    double Mjd_UTC = 49746.1163541665;
+
+    double A = -5.59518621231704e-07;
+    double B = 2.33458634442529e-06;
+    double C = 0.3260677;
+    double D = 0.0027213;
+    double E = -1.16864337831454e-07;
+    double F = -2.48709418409192e-08;
+    double G = -8.19335121075116e-10;
+    double H = -1.53201123230613e-09;
+    double I = 29;
+
+    auto [a,b,c,d,e,f,g,h,i] = IERS(eopdata, Mjd_UTC);
+
+    _assert(fabs(A - a) < 1e-17);
+    _assert(fabs(B - b) < 1e-16);
+    _assert(fabs(C - c) < 1e-10);
+    _assert(fabs(D - d) < 1e-10);
+    _assert(fabs(E - e) < 1e-17);
+    _assert(fabs(F - f) < 1e-18);
+    _assert(fabs(G - g) < 1e-20);
+    _assert(fabs(H - h) < 1e-19);
+    _assert(fabs(I - i) < 1e-10);
+
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -763,6 +792,7 @@ int all_tests()
     _verify(sign__01);
     _verify(timediff_01);
     _verify(AzElPa_01);
+    _verify(IERS_01);
 
     return 0;
 }
@@ -770,6 +800,8 @@ int all_tests()
 
 int main()
 {
+    eop19620101(40000);
+
     int result = all_tests();
 
     if (result == 0)

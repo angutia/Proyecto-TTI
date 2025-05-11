@@ -1,20 +1,20 @@
-//--------------------------------------------------------------------------
+// $Source$
+//------------------------------------------------------------------------------
+// AzElPa
+//------------------------------------------------------------------------------
+// ProyectoTTI: Proyecto Taller Transversal I
 //
-// Purpose:
-//  Computes azimuth, elevation and partials from local tangent coordinates
+// **Legal**
 //
-// Input:
-//   s      Topocentric local tangent coordinates (East-North-Zenith frame)
-// 
-// Outputs:
-//   A      Azimuth [rad]
-//   E      Elevation [rad]
-//   dAds   Partials of azimuth w.r.t. s
-//   dEds   Partials of elevation w.r.t. s
+// Created: 2025/03/28
 //
-// Last modified:   2015/08/12   M. Mahooti
-//
-//--------------------------------------------------------------------------
+/** @file AzElPa.cpp
+*   @brief Source of the AzElPa operation. Computes azimuth, elevation and partials from local tangent coordinates.
+*
+*   @author Ander Gutiérrez Andrés.
+*   @bug No known bugs.
+*/
+//------------------------------------------------------------------------------
 
 #define _USE_MATH_DEFINES
 #include <cmath>
