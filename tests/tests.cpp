@@ -20,6 +20,8 @@
 #include "..\include\TimeUpdate.hpp"
 #include "..\include\AccelHarmonic.hpp"
 #include "..\include\EqnEquinox.hpp"
+#include "..\include\LTC.hpp"
+#include "..\include\NutMatrix.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -851,6 +853,37 @@ int EqnEquinox_01() {
     return 0;
 }
 
+int LTC_01() {
+    double lon = 234;
+    double lat = 15.2;
+
+    Matrix C(3,3);
+    C(1,1) = -0.998816691202808; C(1,2) = 0.0486335005389691; C(1,3) = 0;
+    C(2,1) = -0.0236552708965251; C(2,2) = -0.485823129006337; C(2,3) = -0.87373698301108;
+    C(3,1) = -0.0424928880341866; C(3,2) = -0.872703082352651; C(3,3) = 0.4863986888538;
+
+    Matrix R = LTC(lon, lat);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int NutMatrix_01() {
+    double Mjd_TT = 235.9173;
+
+    Matrix C(3,3);
+    C(1,1) = 0.999999998585968; C(1,2) = -4.87845314796075e-05; C(1,3) = -2.11691613886533e-05;
+    C(2,1) = 4.87838437796019e-05; C(2,2) = 0.999999998282423; C(2,3) = -3.24852356541339e-05;
+    C(3,1) = 2.1170746129295e-05; C(3,2) = 3.24842028951444e-05; C(3,3) = 0.999999999248288;
+
+    Matrix R = NutMatrix(Mjd_TT);
+
+    _assert(m_equals(C, R, 1e-8));
+
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -896,6 +929,8 @@ int all_tests()
     _verify(TimeUpdate_01);
     _verify(AccelHarmonic_01);
     _verify(EqnEquinox_01);
+    _verify(LTC_01);
+    _verify(NutMatrix_01);
 
     return 0;
 }
