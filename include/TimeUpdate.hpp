@@ -1,6 +1,6 @@
 // $Header$
 //------------------------------------------------------------------------------
-// NutAngles
+// TimeUpdate
 //------------------------------------------------------------------------------
 // ProyectoTTI: Proyecto Taller Transversal I
 //
@@ -8,32 +8,32 @@
 //
 // Created: 2025/03/28
 //
-/** @file NutAngles.hpp
-*   @brief This header contains the NutAngles operation. Computes the nutation in longitude and obliquity.
+/** @file TimeUpdate.hpp
+*   @brief This header contains the TimeUpdate operation. Computes the time update.
 *
 *   @author Ander Gutiérrez Andrés.
 *   @bug No known bugs.
 */
 //------------------------------------------------------------------------------
 
-#ifndef _NUTANGLES_
-#define _NUTANGLES_
+#ifndef _TIMEUPDATE_
+#define _TIMEUPDATE_
 
-#include <tuple>
-
-using namespace std;
+#include "../include/matrix.hpp"
 
 //------------------------------------------------------------------------------
-// NutAngles (double Mjd_TT)
+// TimeUpdate(Matrix& P, Matrix& Phi, double Qdt = 0.0)
 //-------------------------------------------------------------------------------
 /**
-* @brief Computes the nutation in longitude and obliquity.
+* @brief Computes the time update.
 *
-* @param [in] Mjd_TT Modified Julian Date (Terrestrial Time).
-* @return A tuple containing the nutation angles in longitude and obliquity.
+* @param [in] P 
+* @param [in] Phi 
+* @param [in] Qdt 
+* @return The updated matrix P.
 */
 //------------------------------------------------------------------------------
-tuple<double, double> NutAngles (double Mjd_TT);
+Matrix& TimeUpdate(Matrix& P, Matrix& Phi, double Qdt = 0.0);
 
 
 

@@ -1,21 +1,24 @@
-//--------------------------------------------------------------------------
+// $Source$
+//------------------------------------------------------------------------------
+// NutAngles
+//------------------------------------------------------------------------------
+// ProyectoTTI: Proyecto Taller Transversal I
 //
-// NutAngles.m
+// **Legal**
 //
-// Purpose:
-//   Nutation in longitude and obliquity
+// Created: 2025/03/28
 //
-// Input:
-//   Mjd_TT     Modified Julian Date (Terrestrial Time)
-//
-// Output:
-//   dpsi,deps  Nutation Angles
-//
-// Last modified:   2015/08/12   M. Mahooti
-// 
-//--------------------------------------------------------------------------
+/** @file NutAngles.cpp
+*   @brief Source of the NutAngles operation. It computes the nutation in longitude and obliquity.
+*
+*   @author Ander Gutiérrez Andrés.
+*   @bug No known bugs.
+*/
+//------------------------------------------------------------------------------
 
 #include "../include/SAT_Const.hpp"
+#include "../include/matrix.hpp"
+#include <tuple>
 
 tuple<double, double> NutAngles (double Mjd_TT){
     double T  = (Mjd_TT-SAT_Const::MJD_J2000)/36525;

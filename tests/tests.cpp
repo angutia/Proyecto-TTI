@@ -16,6 +16,10 @@
 #include "..\include\AzElPa.hpp"
 #include "..\include\IERS.hpp"
 #include "..\include\Legendre.hpp"
+#include "..\include\NutAngles.hpp"
+#include "..\include\TimeUpdate.hpp"
+#include "..\include\AccelHarmonic.hpp"
+#include "..\include\EqnEquinox.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -778,6 +782,75 @@ int Legendre_01() {
     return 0;
 }
 
+int NutAngles_01() {
+    double Mjd_UTC = 83746.12;
+
+    double A = 5.88403005430328e-05;
+    double B = -3.2505118763951e-05;
+
+    auto [a,b] = NutAngles(Mjd_UTC);
+
+    _assert(fabs(A - a) < 1e-8);
+    _assert(fabs(B - b) < 1e-8);
+
+    return 0;
+}
+
+int TimeUpdate_01() {
+    Matrix P(3,3);
+    P(1,1) = 9; P(1,2) = 8; P(1,3) = 9;
+    P(2,1) = 4; P(2,2) = 5; P(2,3) = 6;
+    P(3,1) = 3; P(3,2) = 2; P(3,3) = 0;
+
+    Matrix Phi(2,3);
+    Phi(1,1) = 1; Phi(1,2) = 2; Phi(1,3) = 3;
+    Phi(2,1) = 4; Phi(2,2) = 5; Phi(2,3) = 6;
+
+    Matrix R = TimeUpdate(P, Phi, 2);
+
+    Matrix C(2,2);
+    C(1,1) = 139; C(1,2) = 352;
+    C(2,1) = 412; C(2,2) = 1039;
+
+    _assert(m_equals(R, C, 1e-10));
+
+    return 0;
+}
+
+int AccelHarmonic_01() {
+    Matrix r(3);
+    r(1) = 5; r(2) = 3; r(3) = 6.5;
+
+    Matrix E(3,3);
+    E(1,1) = 1; E(1,2) = 2; E(1,3) = 3;
+    E(2,1) = 4; E(2,2) = 5; E(2,3) = 6;
+    E(3,1) = 7; E(3,2) = 8; E(3,3) = 9;
+
+    int n_max = 4;
+    int m_max = 5;
+
+    Matrix C = AccelHarmonic(transpose(r), E, n_max, m_max);
+
+    Matrix R(3);
+    R(1) = 6.17908715598067e+24; R(2) = 7.32798396948108e+24; R(3) = 8.47688078298148e+24;
+    
+    _assert(m_equals(transpose(C), R, 1e+10));
+
+    return 0;
+}
+
+int EqnEquinox_01() {
+    double Mjd_UTC = 23551.2;
+
+    double A = EqnEquinox(Mjd_UTC);
+    
+    double a = -2.24482778139221e-05;
+
+    _assert(fabs(A - a) < 1e-7);
+
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -819,6 +892,10 @@ int all_tests()
     _verify(AzElPa_01);
     _verify(IERS_01);
     _verify(Legendre_01);
+    _verify(NutAngles_01);
+    _verify(TimeUpdate_01);
+    _verify(AccelHarmonic_01);
+    _verify(EqnEquinox_01);
 
     return 0;
 }
@@ -826,7 +903,8 @@ int all_tests()
 
 int main()
 {
-    eop19620101(40000);
+    eop19620101(21413);
+    GGM03S();
 
     int result = all_tests();
 
