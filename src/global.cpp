@@ -3,6 +3,7 @@
 Matrix eopdata;
 Matrix Cnm;
 Matrix Snm;
+Matrix PC;
 double eps = 2.2204e-16;
 
 void eop19620101(int c){
@@ -44,6 +45,15 @@ void GGM03S(){
     }
 	
 	fclose(fid);
+}
+
+void DE430Coeff(){
+    
+    
+
+
+
+    
 }
 
 
