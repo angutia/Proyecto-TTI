@@ -259,82 +259,88 @@ tuple<Matrix&, Matrix&, Matrix&, Matrix&, Matrix&, Matrix&, Matrix&, Matrix&, Ma
     Mjd0 = t1;
     Matrix& r_Neptune = transpose(Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32, Cx_Neptune.extract_vector(6*j+1,6*j+6), Cy_Neptune.extract_vector(6*j+1,6*j+6), Cz_Neptune.extract_vector(6*j+1,6*j+6)))*1e3;
 
-    temp = (423:6:441);
-    Cx_Pluto = PCtemp(temp(1):temp(2)-1);
-    Cy_Pluto = PCtemp(temp(2):temp(3)-1);
-    Cz_Pluto = PCtemp(temp(3):temp(4)-1);
+
+    for (int j = 0; j <= 3; j++){
+        temp(j+1) = 423 + 6*j;
+    }
+    Matrix Cx_Pluto = PCtemp.extract_vector(temp(1),temp(2)-1);
+    Matrix Cy_Pluto = PCtemp.extract_vector(temp(2),temp(3)-1);
+    Matrix Cz_Pluto = PCtemp.extract_vector(temp(3),temp(4)-1);
     j=0;
     Mjd0 = t1;
-    r_Pluto = 1e3*Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32, Cx_Pluto(6*j+1:6*j+6),...
-                        Cy_Pluto(6*j+1:6*j+6), Cz_Pluto(6*j+1:6*j+6))';
+    Matrix& r_Pluto = transpose(Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32, Cx_Pluto.extract_vector(6*j+1,6*j+6), Cy_Pluto.extract_vector(6*j+1,6*j+6), Cz_Pluto.extract_vector(6*j+1,6*j+6)))*1e3;
 
-    temp = (819:10:839);
-    Cx_Nutations = PCtemp(temp(1):temp(2)-1);
-    Cy_Nutations = PCtemp(temp(2):temp(3)-1);
-    for i=1:3
+
+    for (int j = 0; j <= 2; j++){
+        temp(j+1) = 819 + 10*j;
+    }
+    Matrix Cx_Nutations = PCtemp.extract_vector(temp(1),temp(2)-1);
+    Matrix Cy_Nutations = PCtemp.extract_vector(temp(2),temp(3)-1);
+    for (int i=1; i<=3; i++){
         temp = temp+20;
-        Cx = PCtemp(temp(1):temp(2)-1);
-        Cy = PCtemp(temp(2):temp(3)-1);
-        Cx_Nutations = [Cx_Nutations,Cx];
-        Cy_Nutations = [Cy_Nutations,Cy];
-    end
-    if (0<=dt && dt<=8)
+        Cx = PCtemp.extract_vector(temp(1),temp(2)-1);
+        Cy = PCtemp.extract_vector(temp(2),temp(3)-1);
+        Cx_Nutations = union_vector(Cx_Nutations,Cx);
+        Cy_Nutations = union_vector(Cy_Nutations,Cy);
+    }
+    if (0<=dt && dt<=8) {
         j=0;
         Mjd0 = t1;
-    elseif(8<dt && dt<=16)
+    } else if(8<dt && dt<=16) {
         j=1;
         Mjd0 = t1+8*j;
-    elseif (16<dt && dt<=24)
+    } else if (16<dt && dt<=24) {
         j=2;
         Mjd0 = t1+8*j;
-    elseif(24<dt && dt<=32)
+    } else if(24<dt && dt<=32) {
         j=3;
         Mjd0 = t1+8*j;
-    end
-    Nutations = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8, Cx_Nutations(10*j+1:10*j+10),...
-                    Cy_Nutations(10*j+1:10*j+10),zeros(10,1))';
+    }
+    Matrix Nutations = transpose(Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8, Cx_Nutations.extract_vector(10*j+1,10*j+10), Cy_Nutations.extract_vector(10*j+1,10*j+10),zeros(10,1)));
 
-    temp = (899:10:929);
-    Cx_Librations = PCtemp(temp(1):temp(2)-1);
-    Cy_Librations = PCtemp(temp(2):temp(3)-1);
-    Cz_Librations = PCtemp(temp(3):temp(4)-1);
-    for i=1:3
+
+    for (int j = 0; j <= 2; j++){
+        temp(j+1) = 899 + 10*j;
+    }
+    Matrix Cx_Librations = PCtemp.extract_vector(temp(1),temp(2)-1);
+    Matrix Cy_Librations = PCtemp.extract_vector(temp(2),temp(3)-1);
+    Matrix Cz_Librations = PCtemp.extract_vector(temp(3),temp(4)-1);
+    for (int i=1; i<=3; i++){
         temp = temp+30;
-        Cx = PCtemp(temp(1):temp(2)-1);
-        Cy = PCtemp(temp(2):temp(3)-1);
-        Cz = PCtemp(temp(3):temp(4)-1);
-        Cx_Librations = [Cx_Librations,Cx];
-        Cy_Librations = [Cy_Librations,Cy];
-        Cz_Librations = [Cz_Librations,Cz];    
-    end
-    if (0<=dt && dt<=8)
+        Cx = PCtemp.extract_vector(temp(1),temp(2)-1);
+        Cy = PCtemp.extract_vector(temp(2),temp(3)-1);
+        Cz = PCtemp.extract_vector(temp(3),temp(4)-1);
+        Cx_Librations = union_vector(Cx_Librations,Cx);
+        Cy_Librations = union_vector(Cy_Librations,Cy);
+        Cz_Librations = union_vector(Cz_Librations,Cz);
+    }
+    if (0<=dt && dt<=8) {
         j=0;
         Mjd0 = t1;
-    elseif(8<dt && dt<=16)
+    } else if(8<dt && dt<=16) {
         j=1;
         Mjd0 = t1+8*j;
-    elseif (16<dt && dt<=24)
+    } else if (16<dt && dt<=24) {
         j=2;
         Mjd0 = t1+8*j;
-    elseif(24<dt && dt<=32)
+    } else if(24<dt && dt<=32) {
         j=3;
         Mjd0 = t1+8*j;
-    end
-    Librations = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8, Cx_Librations(10*j+1:10*j+10),...
-                        Cy_Librations(10*j+1:10*j+10), Cz_Librations(10*j+1:10*j+10))';
-    EMRAT = 81.30056907419062; // DE430
-    EMRAT1 = 1/(1+EMRAT);
-    r_Earth = r_Earth-EMRAT1*r_Moon;
-    r_Mercury = -r_Earth+r_Mercury;
-    r_Venus = -r_Earth+r_Venus;
-    r_Mars = -r_Earth+r_Mars;
-    r_Jupiter = -r_Earth+r_Jupiter;
-    r_Saturn = -r_Earth+r_Saturn;
-    r_Uranus = -r_Earth+r_Uranus;
-    r_Neptune = -r_Earth+r_Neptune;
-    r_Pluto = -r_Earth+r_Pluto;
-    r_Sun = -r_Earth+r_Sun;
+    }
+    Matrix Librations = transpose(Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8, Cx_Librations.extract_vector(10*j+1,10*j+10), Cy_Librations.extract_vector(10*j+1,10*j+10), Cz_Librations.extract_vector(10*j+1,10*j+10)));
+    double EMRAT = 81.30056907419062; // DE430
+    double EMRAT1 = 1/(1+EMRAT);
+    r_Earth = r_Earth-r_Moon*EMRAT1;
+    r_Mercury = (r_Earth*-1)+r_Mercury;
+    r_Venus = (r_Earth*-1)+r_Venus;
+    r_Mars = (r_Earth*-1)+r_Mars;
+    r_Jupiter = (r_Earth*-1)+r_Jupiter;
+    r_Saturn = (r_Earth*-1)+r_Saturn;
+    r_Uranus = (r_Earth*-1)+r_Uranus;
+    r_Neptune = (r_Earth*-1)+r_Neptune;
+    r_Pluto = (r_Earth*-1)+r_Pluto;
+    r_Sun = (r_Earth*-1)+r_Sun;
 
-    end
+    return tie(r_Mercury, r_Venus, r_Earth, r_Mars, r_Jupiter, r_Saturn, r_Uranus, r_Neptune, r_Pluto, r_Moon, r_Sun);
 
 }
