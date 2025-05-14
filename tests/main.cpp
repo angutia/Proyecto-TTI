@@ -8,8 +8,9 @@ using namespace std;
 int main() {
 	eop19620101(4); // c = 21413
     GGM03S();
-	cout << "Cnm: " << Cnm(87,45);
-    cout << "Snm: " << Snm(156,32);
+    DE430Coeff();
+
+    cout << PC(145,98) << endl;
     
 	
 	

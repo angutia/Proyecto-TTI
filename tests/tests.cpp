@@ -22,6 +22,7 @@
 #include "..\include\EqnEquinox.hpp"
 #include "..\include\LTC.hpp"
 #include "..\include\NutMatrix.hpp"
+#include "..\include\JPL_Eph_DE430.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -884,6 +885,49 @@ int NutMatrix_01() {
     return 0;
 }
 
+int JPL_Eph_DE430_01() {
+    double Mjd_TDB = 59726.91;
+
+    Matrix A(3);
+    A(1) = 45624943907.0238; A(2) = 66610814401.4845; A(3) = 24350539316.9015;
+    Matrix B(3);
+    B(1) = 156041917196.322; B(2) = 81414818272.6245; B(3) = 28521345918.8757;
+    Matrix C(3);
+    C(1) = -62313632426.8118; C(2) = -127060711361.205; C(3) = -55048145195.1134;
+    Matrix D(3);
+    D(1) = 221075870798.561; D(2) = 9340551553.04433; D(3) = -3242845351.76138;
+    Matrix E(3);
+    E(1) = 797099670109.136; E(2) = 41752247633.327; E(3) = 596693478.124687;
+    Matrix F(3);
+    F(1) = 1179258547126.20; F(2) = -749619410188.408; F(3) = -355173538778.337;
+    Matrix G(3);
+    G(1) = 2154257860353.50; G(2) = 2038632460078.54; G(3) = 862677136874.476;
+    Matrix H(3);
+    H(1) = 4502545520335.66; H(2) = -334529543081.609; H(3) = -244429338162.394;
+    Matrix I(3);
+    I(1) = 2387424254946.29; I(2) = -4029844389371.32; I(3) = -1942743917545.93;
+    Matrix J(3);
+    J(1) = 314714672.316101; J(2) = 226384796.318904; J(3) = 88055992.3880059;
+    Matrix K(3);
+    K(1) = 60972567794.3542; K(2) = 127333684449.306; K(3) = 55197846561.2721;
+
+    auto [a,b,c,d,e,f,g,h,i,j,k] = JPL_Eph_DE430(Mjd_TDB);
+
+    _assert(m_equals(transpose(A), a, 1e-2));
+    _assert(m_equals(transpose(B), b, 1e-2));
+    _assert(m_equals(transpose(C), c, 1e-2));
+    _assert(m_equals(transpose(D), d, 1e-2));
+    _assert(m_equals(transpose(E), e, 1e-2));
+    _assert(m_equals(transpose(F), f, 1e-2));
+    _assert(m_equals(transpose(G), g, 1e-2));
+    _assert(m_equals(transpose(H), h, 1e-2));
+    _assert(m_equals(transpose(I), i, 1e-2));
+    _assert(m_equals(transpose(J), j, 1e-2));
+    _assert(m_equals(transpose(K), k, 1e-2));
+
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -931,6 +975,7 @@ int all_tests()
     _verify(EqnEquinox_01);
     _verify(LTC_01);
     _verify(NutMatrix_01);
+    _verify(JPL_Eph_DE430_01);
 
     return 0;
 }
@@ -940,6 +985,7 @@ int main()
 {
     eop19620101(21413);
     GGM03S();
+    DE430Coeff();
 
     int result = all_tests();
 
