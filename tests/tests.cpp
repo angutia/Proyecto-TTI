@@ -23,6 +23,9 @@
 #include "..\include\LTC.hpp"
 #include "..\include\NutMatrix.hpp"
 #include "..\include\JPL_Eph_DE430.hpp"
+#include "..\include\PoleMatrix.hpp"
+#include "..\include\PrecMatrix.hpp"
+#include "..\include\gmst.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -928,6 +931,50 @@ int JPL_Eph_DE430_01() {
     return 0;
 }
 
+int PoleMatrix_01() {
+    double xp = 24.3;
+    double yp = 155;
+
+    Matrix C(3,3);
+    C(1,1) = 0.672850388318347; C(1,2) = 0.646057502948598; C(1,3) = 0.360391534062153;
+    C(2,1) = 0; C(2,2) = -0.487161349803341; C(2,3) = 0.873311982774648;
+    C(3,1) = 0.739778585077893; C(3,2) = -0.587608306732987; C(3,3) = -0.327786703388868;
+
+    Matrix R = PoleMatrix(xp,yp);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int PrecMatrix_01() {
+    double Mjd_1 = 31.425;
+    double Mjd_2 = 3512.8;
+
+    Matrix C(3,3);
+    C(1,1) = 0.9999973028945; C(1,2) = -0.00212964323490222; C(1,3) = -0.000926727261271979;
+    C(2,1) = 0.00212964323488723; C(2,2) = 0.999997732306788; C(2,3) = -9.86816720735239e-07;
+    C(3,1) = 0.000926727261306412; C(3,2) = -9.86784383367008e-07; C(3,3) = 0.999999570587712;
+
+    Matrix R = PrecMatrix(Mjd_1, Mjd_2);
+
+    _assert(m_equals(C, R, 1e-10));
+
+    return 0;
+}
+
+int gmst_01() {
+    double Mjd_UT1 = 14752.197;
+
+    double A = 4.66255041375004;
+
+    double R = gmst(Mjd_UT1);
+
+    _assert(fabs(A - R) < 1e-10);
+
+    return 0;
+}
+
 
 int all_tests()
 {
@@ -976,6 +1023,9 @@ int all_tests()
     _verify(LTC_01);
     _verify(NutMatrix_01);
     _verify(JPL_Eph_DE430_01);
+    _verify(PoleMatrix_01);
+    _verify(PrecMatrix_01);
+    _verify(gmst_01);
 
     return 0;
 }
