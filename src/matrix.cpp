@@ -338,7 +338,7 @@ Matrix& inv (Matrix &m) {
 				(*m_aux)(i,j) = 0;
 			}
 		}
-	}	
+	}
 	
 	for(int i = 1; i <= r; i++) {
 		double pivot = (*m_aux)(i,i);
@@ -367,6 +367,10 @@ Matrix& inv (Matrix &m) {
 }
 
 double det (Matrix &m) {
+    if (m.n_row == 1 && m.n_column == 1) {
+        return m(1,1);
+    }
+
 	double aux_det = 0;
 	Matrix *submatrix = new Matrix(m.n_row-1, m.n_column-1);
 	if (m.n_row == 2){
