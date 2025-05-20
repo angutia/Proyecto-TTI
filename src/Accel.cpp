@@ -46,17 +46,11 @@ Matrix& Accel(double x, Matrix& Y){
     Matrix T = N * P;
     Matrix E = PoleMatrix(x_pole,y_pole) * GHAMatrix(Mjd_UT1) * T;
 
-    printf("Mjd_UT1: %lf\n", Mjd_UT1);
-
     double MJD_TDB = Mjday_TDB(Mjd_TT);
     auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(MJD_TDB);
 
-    cout << "bien" << endl;
-
     // Acceleration due to harmonic gravity field 
     Matrix a = AccelHarmonic(Y.extract_vector(1,3), E, AuxParam.n, AuxParam.m);
-
-    cout << "bien" << endl;
 
     // Luni-solar perturbations
     if (AuxParam.sun){
