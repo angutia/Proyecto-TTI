@@ -1,5 +1,6 @@
 #include "..\include\global.hpp"
 
+Param AuxParam;
 Matrix eopdata;
 Matrix Cnm;
 Matrix Snm;

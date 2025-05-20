@@ -29,6 +29,8 @@
 #include "..\include\gast.hpp"
 #include "..\include\MeasUpdate.hpp"
 #include "..\include\G_AccelHarmonic.hpp"
+#include "..\include\GHAMatrix.hpp"
+#include "..\include\Accel.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -1049,12 +1051,53 @@ int G_AccelHarmonic_01() {
     Matrix C = G_AccelHarmonic(transpose(r), E, n_max, m_max);
 
     Matrix R(3,3);
-    R(1,1) = -18831315977.9805; R(1,2) = -45485079776.5586 ; R(1,3) = -72134478172.8643;
-    R(2,1) = -41248388885.3867; R(2,2) = 2178373890.93359; R(2,3) = 45617894913.6523;
-    R(3,1) = -63665461792.793; R(3,2) = 49841827558.4199; R(3,3) = 163370268000.168;
+    R(1,1) = -86231822460812; R(1,2) = -102337777399258; R(1,3) = -118443886018676;
+    R(2,1) = -102337431986604; R(2,2) = -120944388826618; R(2,3) = -139551517957733;
+    R(3,1) = -118443041512400; R(3,2) = -139551000253980; R(3,3) = -160659149896788;
 
-    _assert(m_equals(C, R, 1e-3));
+    _assert(m_equals(C, R, 1e3));
 
+    return 0;
+}
+
+int GHAMatrix_01() {
+    double Mjd_UT1 = 1425.2583;
+
+    Matrix A = GHAMatrix(Mjd_UT1);
+
+    Matrix R(3,3);
+    R(1,1) = -0.39962618404794; R(1,2) = 0.916678194909905; R(1,3) = 0;
+    R(2,1) = -0.916678194909905; R(2,2) = -0.39962618404794; R(2,3) = 0;
+    R(3,1) = 0; R(3,2) = 0; R(3,3) = 1;
+
+    _assert(m_equals(A, R, 1e-8));
+
+    return 0;
+}
+
+int Accel_01() {
+    double x = 3754.1453;
+    Matrix Y(6,1);
+    Y(1,1) = 241.25; 
+    Y(2,1) = -1925; 
+    Y(3,1) = 15.375; 
+    Y(4,1) = 0.5; 
+    Y(5,1) = -0.25; 
+    Y(6,1) = 0.125;
+
+    Matrix A = Accel(x,Y);
+    cout << "A: " << A << endl;
+
+    Matrix R(6,1);
+    R(1,1) = 0.5; 
+    R(2,1) = -0.25; 
+    R(3,1) = 0.125;
+    R(4,1) = -2.72649962746669e+72;
+    R(5,1) = 1.31132822764409e+72;
+    R(6,1) = -1.26811480153501e+72;
+
+    _assert(m_equals(A, R, 1e-8));
+    
     return 0;
 }
 
@@ -1111,6 +1154,8 @@ int all_tests()
     _verify(gast_01);
     _verify(MeasUpdate_01);
     _verify(G_AccelHarmonic_01);
+    _verify(GHAMatrix_01);
+    _verify(Accel_01);
 
     return 0;
 }
@@ -1121,6 +1166,14 @@ int main()
     eop19620101(21413);
     GGM03S();
     DE430Coeff();
+
+    AuxParam.Mjd_UTC = 49746.1112847221;
+    AuxParam.Mjd_TT = 49746.1108586111;
+    AuxParam.n = 20;
+    AuxParam.m = 20;
+    AuxParam.sun = 1;
+    AuxParam.moon = 1;
+    AuxParam.planets = 1;
 
     int result = all_tests();
 

@@ -235,9 +235,19 @@ Matrix& Matrix::operator = (Matrix &m) {
 }
 
 Matrix& Matrix::extract_vector(const int start, const int end) {
-    if (this->n_row > 1 || start < 1 || end > this->n_column || start > end) {
+    if (start < 1 || end > this->n_row * this->n_column || start > end) {
         cout << "Matrix extract_vector: error in start/end\n";
         exit(EXIT_FAILURE);
+    }
+
+    if (this->n_row > 1 && this->n_column == 1) {
+        Matrix *m_aux = new Matrix(end - start + 1,1);
+    
+        for(int i = start; i <= end; i++) {
+            (*m_aux)(i - start + 1,1) = (*this)(i);
+        }
+        
+        return *m_aux;
     }
     
     Matrix *m_aux = new Matrix(end - start + 1);

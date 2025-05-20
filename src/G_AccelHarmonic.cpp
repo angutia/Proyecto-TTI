@@ -32,7 +32,6 @@ Matrix& G_AccelHarmonic(Matrix& r, Matrix& U, int n_max, int m_max){
         dr(i) = d;
         // Acceleration difference
         Matrix da = AccelHarmonic ( r+dr/2,U, n_max, m_max ) - AccelHarmonic ( r-dr/2,U, n_max, m_max );
-        cout << "da "<<i<<": " << da << endl;
         // Derivative with respect to i-th axis
         G.assign_column(i, transpose(da/d));
     }
