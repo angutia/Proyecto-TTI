@@ -31,6 +31,7 @@
 #include "..\include\G_AccelHarmonic.hpp"
 #include "..\include\GHAMatrix.hpp"
 #include "..\include\Accel.hpp"
+#include "..\include\VarEqn.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -1086,7 +1087,32 @@ int Accel_01() {
     Y(6,1) = 0.125;
 
     Matrix A = Accel(x,Y);
+
+    Matrix R(6,1);
+    R(1,1) = 0.5; 
+    R(2,1) = -0.25; 
+    R(3,1) = 0.125;
+    R(4,1) = -2.72649962746669e+72;
+    R(5,1) = 1.31132822764409e+72;
+    R(6,1) = -1.26811480153501e+72;
+
+    _assert(m_equals(A, R, 1e+65));
     
+    return 0;
+}
+
+int VarEqn_01() {
+    double x = 3754.1453;
+    Matrix Y(6,1);
+    Y(1,1) = 241.25; 
+    Y(2,1) = -1925; 
+    Y(3,1) = 15.375; 
+    Y(4,1) = 0.5; 
+    Y(5,1) = -0.25; 
+    Y(6,1) = 0.125;
+
+    Matrix A = VarEqn(x,Y);
+
     Matrix R(6,1);
     R(1,1) = 0.5; 
     R(2,1) = -0.25; 
