@@ -42,7 +42,7 @@ Matrix& VarEqn(double x, Matrix& yPhi){
     // State vector components
     Matrix r = yPhi.extract_vector(1,3);
     Matrix v = yPhi.extract_vector(4,6);
-    Matrix Phi = zeros(6);
+    Matrix Phi = zeros(6,6);
 
     // State transition matrix
     for (int j=1; j <= 6; j++){
@@ -54,8 +54,8 @@ Matrix& VarEqn(double x, Matrix& yPhi){
     Matrix G = G_AccelHarmonic ( r, E, AuxParam.n, AuxParam.m );
 
     // Time derivative of state transition matrix
-    Matrix yPhip = zeros(42,1);
-    Matrix dfdy = zeros(6);
+    Matrix& yPhip = zeros(42,1);
+    Matrix dfdy = zeros(6,6);
 
     for (int i=1; i <= 3; i++){
         for (int j = 1; j <= 3; j++){

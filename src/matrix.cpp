@@ -301,7 +301,7 @@ void Matrix::assign_row(const int row, Matrix &m) {
 }
 
 void Matrix::assign_column(const int column, Matrix &m) {
-    if (column < 1 || column > this->n_column || m.n_column != this->n_row || m.n_row != 1) {
+    if (column < 1 || column > this->n_column || (m.n_row != this->n_row && m.n_row != 1) || (m.n_column != this->n_row && m.n_column != 1)) {
         cout << "Matrix assign_column: error in column\n";
         exit(EXIT_FAILURE);
     }
