@@ -116,6 +116,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
     double x;
     double kold;
     double hnew;
+    double h;
 
     if  ( (State_==DE_STATE.DE_INIT) || (!OldPermit) || (delsgn*del<=0.0) ){
         // On start and restart also set the work variables x and yy(*),
@@ -124,7 +125,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         x      = t;
         yy     = y;
         delsgn = sign_(1.0, del);
-        double h      = sign_( fmax(fouru*fabs(x), fabs(tout-x)), tout-x );
+        h      = sign_( fmax(fouru*fabs(x), fabs(tout-x)), tout-x );
     }
 
     while (true){   // Start step loop
@@ -158,11 +159,11 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             }
             
             // Interpolate for the solution yout and for
-            // the derivative of the solution ypout      
+            // the derivative of the solution ypout               
             for (int j=1; j<=ki; j++){
                 int i = ki+1-j;
-                yout  = yout  + phi.extract_column(i+1)*g(i+1);
-                ypout = ypout + phi.extract_column(i+1)*rho(i+1);
+                yout  = yout  + transpose(phi.extract_column(i+1))*g(i+1);
+                ypout = ypout + transpose(phi.extract_column(i+1))*rho(i+1);
             }
             yout = y + yout*hi;
             y    = yout;
@@ -176,7 +177,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         // If cannot go past output point and sufficiently close,
         // extrapolate and return
         if ( !PermitTOUT && ( fabs(tout-x) < fouru*fabs(x) ) ){
-            double h = tout - x;
+            h = tout - x;
             yp = func(x,yy);          // Compute derivative yp(x)
             y = yy + yp*h;                // Extrapolate vector from x to tout
             State_    = DE_STATE.DE_DONE; // Set return code
@@ -200,7 +201,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         //   end
         
         // Limit step size, set weight vector and take a step
-        double h  = sign_(min(fabs(h), fabs(tend-x)), h);
+        h  = sign_(min(fabs(h), fabs(tend-x)), h);
         for (int l=1; l<=n_eqn; l++){
             wt(l) = releps*fabs(yy(l)) + abseps;
         }
