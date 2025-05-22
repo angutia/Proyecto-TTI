@@ -1,0 +1,79 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/\+Cheb3D.cpp File Reference}
+\hypertarget{_cheb3_d_8cpp}{}\label{_cheb3_d_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/Cheb3D.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/Cheb3D.cpp}}
+
+
+Source of the Cheb3D operation. Chebyshev approximation of 3-\/dimensional vectors.  
+
+
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}matrix.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Cheb3\+D.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{_cheb3_d_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_cheb3_d_8cpp_a05a110559834c211c7a7eeac28dd8246}{Cheb3D}} (double t, int N, double Ta, double Tb, \mbox{\hyperlink{class_matrix}{Matrix}} \&Cx, \mbox{\hyperlink{class_matrix}{Matrix}} \&Cy, \mbox{\hyperlink{class_matrix}{Matrix}} \&Cz)
+\begin{DoxyCompactList}\small\item\em Computes the perturbational acceleration due to a point mass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source of the Cheb3D operation. Chebyshev approximation of 3-\/dimensional vectors. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000040}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_cheb3_d_8cpp_a05a110559834c211c7a7eeac28dd8246}\index{Cheb3D.cpp@{Cheb3D.cpp}!Cheb3D@{Cheb3D}}
+\index{Cheb3D@{Cheb3D}!Cheb3D.cpp@{Cheb3D.cpp}}
+\doxysubsubsection{\texorpdfstring{Cheb3D()}{Cheb3D()}}
+{\footnotesize\ttfamily \label{_cheb3_d_8cpp_a05a110559834c211c7a7eeac28dd8246} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Cheb3D (\begin{DoxyParamCaption}\item[{double}]{t}{, }\item[{int}]{N}{, }\item[{double}]{Ta}{, }\item[{double}]{Tb}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{Cx}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{Cy}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{Cz}{}\end{DoxyParamCaption})}
+
+
+
+Computes the perturbational acceleration due to a point mass. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & Number of coefficients. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Ta} & Begin interval. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Tb} & End interval. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cx} & Coefficients of Chebyshev polyomial (x-\/coordinate). \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cy} & Coefficients of Chebyshev polyomial (y-\/coordinate). \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cz} & Coefficients of Chebyshev polyomial (z-\/coordinate). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chebyshev approximation of 3-\/dimensional vectors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{_cheb3_d_8cpp_a05a110559834c211c7a7eeac28dd8246_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_cheb3_d_8cpp_a05a110559834c211c7a7eeac28dd8246_icgraph}
+\end{center}
+\end{figure}

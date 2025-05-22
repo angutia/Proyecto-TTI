@@ -1,0 +1,359 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/matrix.hpp File Reference}
+\hypertarget{matrix_8hpp}{}\label{matrix_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/matrix.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/matrix.hpp}}
+
+
+This header contains the matrix operations.  
+
+
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for matrix.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{matrix_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_matrix}{Matrix}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{matrix_8hpp_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}{operator$<$$<$}} (ostream \&o, \mbox{\hyperlink{class_matrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_a56d60ea1f08402246a7cfd477d69a618}{zeros}} (const int n\+\_\+row, const int n\+\_\+column)
+\begin{DoxyCompactList}\small\item\em Creates a matrix of zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_ab2f05195ce5c6c4b6e00df63a50c329d}{zeros}} (const int n)
+\begin{DoxyCompactList}\small\item\em Creates a vector of zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_ad8d8519e7f94df41a4c5b535b4899222}{inv}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&m)
+\begin{DoxyCompactList}\small\item\em Inverts a matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{matrix_8hpp_a127af89400a7243fcf299416b7aea989}{det}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&m)
+\begin{DoxyCompactList}\small\item\em Calculates the determinant of a matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_a6d5ff1bcc8ce1f0309a47210e1231c6c}{eye}} (const int n)
+\begin{DoxyCompactList}\small\item\em Creates an identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_acbd9778b697f9ad3da64ef53b850e2c9}{transpose}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&m)
+\begin{DoxyCompactList}\small\item\em Transposes a matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{matrix_8hpp_a907c9c6f53fc52d17e86b507b156536f}{norm}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&m)
+\begin{DoxyCompactList}\small\item\em Calculates the norm of a matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{matrix_8hpp_a8d69098a17359927ba56f235d1012f8d}{dot}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&v1, \mbox{\hyperlink{class_matrix}{Matrix}} \&v2)
+\begin{DoxyCompactList}\small\item\em Calculates the dot product of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_a08b20c4fe4332345ef52eaa22cbf181a}{cross}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&v1, \mbox{\hyperlink{class_matrix}{Matrix}} \&v2)
+\begin{DoxyCompactList}\small\item\em Calculates the cross product of two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{matrix_8hpp_ab7c29bd668becd2c3be14876cb2ca51a}{union\+\_\+vector}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&v1, \mbox{\hyperlink{class_matrix}{Matrix}} \&v2)
+\begin{DoxyCompactList}\small\item\em Concatenates two vectors into a single vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the matrix operations. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000018}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{matrix_8hpp_a08b20c4fe4332345ef52eaa22cbf181a}\index{matrix.hpp@{matrix.hpp}!cross@{cross}}
+\index{cross@{cross}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a08b20c4fe4332345ef52eaa22cbf181a} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& cross (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v1}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v2}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the cross product of two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & First vector to calculate the cross product of. \\
+\hline
+{\em v2} & Second vector to calculate the cross product of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cross product of the two vectors. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a08b20c4fe4332345ef52eaa22cbf181a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_a127af89400a7243fcf299416b7aea989}\index{matrix.hpp@{matrix.hpp}!det@{det}}
+\index{det@{det}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a127af89400a7243fcf299416b7aea989} 
+double det (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the determinant of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{class_matrix}{Matrix} to calculate the determinant of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The determinant of the matrix. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=110pt]{matrix_8hpp_a127af89400a7243fcf299416b7aea989_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a127af89400a7243fcf299416b7aea989_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_a8d69098a17359927ba56f235d1012f8d}\index{matrix.hpp@{matrix.hpp}!dot@{dot}}
+\index{dot@{dot}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a8d69098a17359927ba56f235d1012f8d} 
+double dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v1}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v2}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the dot product of two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & First vector to calculate the dot product of. \\
+\hline
+{\em m2} & Second vector to calculate the dot product of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the two vectors. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a8d69098a17359927ba56f235d1012f8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_a6d5ff1bcc8ce1f0309a47210e1231c6c}\index{matrix.hpp@{matrix.hpp}!eye@{eye}}
+\index{eye@{eye}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{eye()}{eye()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a6d5ff1bcc8ce1f0309a47210e1231c6c} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& eye (\begin{DoxyParamCaption}\item[{const int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Creates an identity matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Size of the identity matrix to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created identity matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a6d5ff1bcc8ce1f0309a47210e1231c6c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_ad8d8519e7f94df41a4c5b535b4899222}\index{matrix.hpp@{matrix.hpp}!inv@{inv}}
+\index{inv@{inv}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{inv()}{inv()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_ad8d8519e7f94df41a4c5b535b4899222} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Inverts a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{class_matrix}{Matrix} to be inverted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The inverted matrix. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{matrix_8hpp_ad8d8519e7f94df41a4c5b535b4899222_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_ad8d8519e7f94df41a4c5b535b4899222_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_a907c9c6f53fc52d17e86b507b156536f}\index{matrix.hpp@{matrix.hpp}!norm@{norm}}
+\index{norm@{norm}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a907c9c6f53fc52d17e86b507b156536f} 
+double norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the norm of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{class_matrix}{Matrix} to calculate the norm of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The norm of the matrix. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{matrix_8hpp_a907c9c6f53fc52d17e86b507b156536f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a907c9c6f53fc52d17e86b507b156536f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92}\index{matrix.hpp@{matrix.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a6ce0bc529fe2ee6fb2d0eb8acbdc1e92} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{o}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & Output stream to print the matrix to. \\
+\hline
+{\em m} & \doxylink{class_matrix}{Matrix} to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{matrix_8hpp_acbd9778b697f9ad3da64ef53b850e2c9}\index{matrix.hpp@{matrix.hpp}!transpose@{transpose}}
+\index{transpose@{transpose}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_acbd9778b697f9ad3da64ef53b850e2c9} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Transposes a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{class_matrix}{Matrix} to be transposed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transposed matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_acbd9778b697f9ad3da64ef53b850e2c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_ab7c29bd668becd2c3be14876cb2ca51a}\index{matrix.hpp@{matrix.hpp}!union\_vector@{union\_vector}}
+\index{union\_vector@{union\_vector}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{union\_vector()}{union\_vector()}}
+{\footnotesize\ttfamily \label{matrix_8hpp_ab7c29bd668becd2c3be14876cb2ca51a} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& union\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v1}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{v2}{}\end{DoxyParamCaption})}
+
+
+
+Concatenates two vectors into a single vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & First vector to be concatenated. \\
+\hline
+{\em v2} & Second vector to be concatenated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The concatenated vector. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_ab7c29bd668becd2c3be14876cb2ca51a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{matrix_8hpp_ab2f05195ce5c6c4b6e00df63a50c329d}\index{matrix.hpp@{matrix.hpp}!zeros@{zeros}}
+\index{zeros@{zeros}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{matrix_8hpp_ab2f05195ce5c6c4b6e00df63a50c329d} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& zeros (\begin{DoxyParamCaption}\item[{const int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Creates a vector of zeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of elements of the vector to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created vector. 
+\end{DoxyReturn}
+\Hypertarget{matrix_8hpp_a56d60ea1f08402246a7cfd477d69a618}\index{matrix.hpp@{matrix.hpp}!zeros@{zeros}}
+\index{zeros@{zeros}!matrix.hpp@{matrix.hpp}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{matrix_8hpp_a56d60ea1f08402246a7cfd477d69a618} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& zeros (\begin{DoxyParamCaption}\item[{const int}]{n\+\_\+row}{, }\item[{const int}]{n\+\_\+column}{}\end{DoxyParamCaption})}
+
+
+
+Creates a matrix of zeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+row} & Number of rows of the matrix to be created. \\
+\hline
+{\em n\+\_\+column} & Number of columns of the matrix to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrix_8hpp_a56d60ea1f08402246a7cfd477d69a618_icgraph}
+\end{center}
+\end{figure}

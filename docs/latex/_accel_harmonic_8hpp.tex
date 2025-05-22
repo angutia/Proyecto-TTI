@@ -1,0 +1,82 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+Accel\+Harmonic.hpp File Reference}
+\hypertarget{_accel_harmonic_8hpp}{}\label{_accel_harmonic_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/AccelHarmonic.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/AccelHarmonic.hpp}}
+
+
+This header contains the Accel\+Harmonic operation. Computes the acceleration due to the harmonic gravity field of the central body.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+Include dependency graph for Accel\+Harmonic.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_accel_harmonic_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accel_harmonic_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_accel_harmonic_8hpp_a97ea72b6a1426f18c34d295e50b8fc4b}{Accel\+Harmonic}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&r, \mbox{\hyperlink{class_matrix}{Matrix}} \&E, int n\+\_\+max, int m\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Computes the acceleration due to the harmonic gravity field of the central body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the Accel\+Harmonic operation. Computes the acceleration due to the harmonic gravity field of the central body. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_accel_harmonic_8hpp_a97ea72b6a1426f18c34d295e50b8fc4b}\index{AccelHarmonic.hpp@{AccelHarmonic.hpp}!AccelHarmonic@{AccelHarmonic}}
+\index{AccelHarmonic@{AccelHarmonic}!AccelHarmonic.hpp@{AccelHarmonic.hpp}}
+\doxysubsubsection{\texorpdfstring{AccelHarmonic()}{AccelHarmonic()}}
+{\footnotesize\ttfamily \label{_accel_harmonic_8hpp_a97ea72b6a1426f18c34d295e50b8fc4b} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Accel\+Harmonic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{r}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{E}{, }\item[{int}]{n\+\_\+max}{, }\item[{int}]{m\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+
+Computes the acceleration due to the harmonic gravity field of the central body. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & Satellite position vector in the inertial system. \\
+\hline
+\mbox{\texttt{ in}}  & {\em E} & Transformation matrix to body-\/fixed system. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+\_\+max} & Maximum degree. \\
+\hline
+\mbox{\texttt{ in}}  & {\em m\+\_\+max} & Maximum order (m\+\_\+max\texorpdfstring{$<$}{<}=n\+\_\+max; m\+\_\+max=0 for zonals, only). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The acceleration (a=d\texorpdfstring{$^\wedge$}{\string^}2r/dt\texorpdfstring{$^\wedge$}{\string^}2). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{_accel_harmonic_8hpp_a97ea72b6a1426f18c34d295e50b8fc4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accel_harmonic_8hpp_a97ea72b6a1426f18c34d295e50b8fc4b_icgraph}
+\end{center}
+\end{figure}

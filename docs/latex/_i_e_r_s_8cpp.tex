@@ -1,0 +1,75 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/\+IERS.cpp File Reference}
+\hypertarget{_i_e_r_s_8cpp}{}\label{_i_e_r_s_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/IERS.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/IERS.cpp}}
+
+
+Source of the IERS operation. Management of IERS time and polar motion data.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+{\ttfamily \#include "{}../include/\+SAT\+\_\+\+Const.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+Include dependency graph for IERS.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_e_r_s_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ \mbox{\hyperlink{_i_e_r_s_8cpp_a1613bc89717d0e37aef2c79cc1ecb646}{IERS}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&eop, double Mjd\+\_\+\+UTC, char interp=\textquotesingle{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Management of IERS time and polar motion data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source of the IERS operation. Management of IERS time and polar motion data. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000049}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_e_r_s_8cpp_a1613bc89717d0e37aef2c79cc1ecb646}\index{IERS.cpp@{IERS.cpp}!IERS@{IERS}}
+\index{IERS@{IERS}!IERS.cpp@{IERS.cpp}}
+\doxysubsubsection{\texorpdfstring{IERS()}{IERS()}}
+{\footnotesize\ttfamily \label{_i_e_r_s_8cpp_a1613bc89717d0e37aef2c79cc1ecb646} 
+tuple$<$ double, double, double, double, double, double, double, double, double $>$ IERS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{eop}{, }\item[{double}]{Mjd\+\_\+\+UTC}{, }\item[{char}]{interp}{ = {\ttfamily \textquotesingle{}n\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Management of IERS time and polar motion data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em eop} & Earth Orientation Parameters (EOP) data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Mjd\+\_\+\+UTC} & Modified Julian Date in UTC. \\
+\hline
+\mbox{\texttt{ in}}  & {\em interp} & Interpolation method (\textquotesingle{}l\textquotesingle{} for linear, \textquotesingle{}n\textquotesingle{} for nearest). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the x and y coordinates of the pole, UT1-\/\+UTC, LOD, dpsi, deps, dx\+\_\+pole, dy\+\_\+pole, and TAI-\/\+UTC. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_e_r_s_8cpp_a1613bc89717d0e37aef2c79cc1ecb646_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_e_r_s_8cpp_a1613bc89717d0e37aef2c79cc1ecb646_icgraph}
+\end{center}
+\end{figure}

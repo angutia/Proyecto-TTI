@@ -1,0 +1,77 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+JPL\+\_\+\+Eph\+\_\+\+DE430.hpp File Reference}
+\hypertarget{_j_p_l___eph___d_e430_8hpp}{}\label{_j_p_l___eph___d_e430_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/JPL\_Eph\_DE430.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/JPL\_Eph\_DE430.hpp}}
+
+
+This header contains the JPL\+\_\+\+Eph\+\_\+\+DE430 operation. It computes the sun, moon, and nine major planets\textquotesingle{} equatorial position using JPL Ephemerides.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+Include dependency graph for JPL\+\_\+\+Eph\+\_\+\+DE430.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{_j_p_l___eph___d_e430_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_j_p_l___eph___d_e430_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ \mbox{\hyperlink{_j_p_l___eph___d_e430_8hpp_a5e6fedfbbbe0ca32aa62a9016e7d3293}{JPL\+\_\+\+Eph\+\_\+\+DE430}} (double Mjd\+\_\+\+TDB)
+\begin{DoxyCompactList}\small\item\em Computes the sun, moon, and nine major planets\textquotesingle{} equatorial position using JPL Ephemerides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the JPL\+\_\+\+Eph\+\_\+\+DE430 operation. It computes the sun, moon, and nine major planets\textquotesingle{} equatorial position using JPL Ephemerides. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_j_p_l___eph___d_e430_8hpp_a5e6fedfbbbe0ca32aa62a9016e7d3293}\index{JPL\_Eph\_DE430.hpp@{JPL\_Eph\_DE430.hpp}!JPL\_Eph\_DE430@{JPL\_Eph\_DE430}}
+\index{JPL\_Eph\_DE430@{JPL\_Eph\_DE430}!JPL\_Eph\_DE430.hpp@{JPL\_Eph\_DE430.hpp}}
+\doxysubsubsection{\texorpdfstring{JPL\_Eph\_DE430()}{JPL\_Eph\_DE430()}}
+{\footnotesize\ttfamily \label{_j_p_l___eph___d_e430_8hpp_a5e6fedfbbbe0ca32aa62a9016e7d3293} 
+tuple$<$ \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ JPL\+\_\+\+Eph\+\_\+\+DE430 (\begin{DoxyParamCaption}\item[{double}]{Mjd\+\_\+\+TDB}{}\end{DoxyParamCaption})}
+
+
+
+Computes the sun, moon, and nine major planets\textquotesingle{} equatorial position using JPL Ephemerides. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Mjd\+\_\+\+TDB} & Modified julian date of TDB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+r\+\_\+\+Earth(solar system barycenter (\+SSB)),r\+\_\+\+Mars,r\+\_\+\+Mercury,r\+\_\+\+Venus,r\+\_\+\+Jupiter,r\+\_\+\+Saturn,r\+\_\+\+Uranus,r\+\_\+\+Neptune,r\+\_\+\+Pluto,r\+\_\+\+Moon,r\+\_\+\+Sun(geocentric equatorial position (\mbox{[}m\mbox{]}) referred to the International Celestial Reference Frame (ICRF)). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_j_p_l___eph___d_e430_8hpp_a5e6fedfbbbe0ca32aa62a9016e7d3293_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_j_p_l___eph___d_e430_8hpp_a5e6fedfbbbe0ca32aa62a9016e7d3293_icgraph}
+\end{center}
+\end{figure}

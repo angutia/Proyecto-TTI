@@ -1,0 +1,88 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+DEInteg.hpp File Reference}
+\hypertarget{_d_e_integ_8hpp}{}\label{_d_e_integ_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/DEInteg.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/DEInteg.hpp}}
+
+
+This header contains the DEInteg operation. It contains the numerical integration methods for ordinaray differential equations. This module provides implemenation of the variable order variable stepsize multistep method of Shampine \& Gordon.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+Include dependency graph for DEInteg.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_d_e_integ_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{_d_e_integ_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_d_e_integ_8hpp_a10e4e9f391ee81d54dd59c658520c8a5}{DEInteg}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&func(double t, \mbox{\hyperlink{class_matrix}{Matrix}} \&Y), double t, double tout, double relerr, double abserr, int n\+\_\+eqn, \mbox{\hyperlink{class_matrix}{Matrix}} \&y)
+\begin{DoxyCompactList}\small\item\em Numerical integration methods for ordinaray differential equations. This module provides implemenation of the variable order variable stepsize multistep method of Shampine \& Gordon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the DEInteg operation. It contains the numerical integration methods for ordinaray differential equations. This module provides implemenation of the variable order variable stepsize multistep method of Shampine \& Gordon. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_d_e_integ_8hpp_a10e4e9f391ee81d54dd59c658520c8a5}\index{DEInteg.hpp@{DEInteg.hpp}!DEInteg@{DEInteg}}
+\index{DEInteg@{DEInteg}!DEInteg.hpp@{DEInteg.hpp}}
+\doxysubsubsection{\texorpdfstring{DEInteg()}{DEInteg()}}
+{\footnotesize\ttfamily \label{_d_e_integ_8hpp_a10e4e9f391ee81d54dd59c658520c8a5} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& DEInteg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{func}{double t, Matrix \&Y, }\item[{double}]{t}{, }\item[{double}]{tout}{, }\item[{double}]{relerr}{, }\item[{double}]{abserr}{, }\item[{int}]{n\+\_\+eqn}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Numerical integration methods for ordinaray differential equations. This module provides implemenation of the variable order variable stepsize multistep method of Shampine \& Gordon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em func} & Function pointer to the function to be integrated \\
+\hline
+\mbox{\texttt{ in}}  & {\em t} & Initial time \\
+\hline
+\mbox{\texttt{ in}}  & {\em tout} & Final time \\
+\hline
+\mbox{\texttt{ in}}  & {\em relerr} & Relative error tolerance \\
+\hline
+\mbox{\texttt{ in}}  & {\em abserr} & Absolute error tolerance \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+\_\+eqn} & Number of equations to be integrated \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Initial state vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting state vector 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_e_integ_8hpp_a10e4e9f391ee81d54dd59c658520c8a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_e_integ_8hpp_a10e4e9f391ee81d54dd59c658520c8a5_icgraph}
+\end{center}
+\end{figure}

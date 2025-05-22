@@ -1,0 +1,78 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+Accel.hpp File Reference}
+\hypertarget{_accel_8hpp}{}\label{_accel_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/Accel.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/Accel.hpp}}
+
+
+This header contains the Accel operation. It computes the acceleration of an Earth orbiting satellite due to the Earth\textquotesingle{}s harmonic gravity field, the gravitational perturbations of the Sun and Moon, the solar radiation pressure, and the atmospheric drag.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+Include dependency graph for Accel.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_accel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{_accel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_accel_8hpp_a28040ec3672b4e1805218ad1cd43bfa0}{Accel}} (double x, \mbox{\hyperlink{class_matrix}{Matrix}} \&Y)
+\begin{DoxyCompactList}\small\item\em Computes the acceleration of an Earth orbiting satellite due to the Earth\textquotesingle{}s harmonic gravity field, the gravitational perturbations of the Sun and Moon, the solar radiation pressure, and the atmospheric drag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the Accel operation. It computes the acceleration of an Earth orbiting satellite due to the Earth\textquotesingle{}s harmonic gravity field, the gravitational perturbations of the Sun and Moon, the solar radiation pressure, and the atmospheric drag. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_accel_8hpp_a28040ec3672b4e1805218ad1cd43bfa0}\index{Accel.hpp@{Accel.hpp}!Accel@{Accel}}
+\index{Accel@{Accel}!Accel.hpp@{Accel.hpp}}
+\doxysubsubsection{\texorpdfstring{Accel()}{Accel()}}
+{\footnotesize\ttfamily \label{_accel_8hpp_a28040ec3672b4e1805218ad1cd43bfa0} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Accel (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{Y}{}\end{DoxyParamCaption})}
+
+
+
+Computes the acceleration of an Earth orbiting satellite due to the Earth\textquotesingle{}s harmonic gravity field, the gravitational perturbations of the Sun and Moon, the solar radiation pressure, and the atmospheric drag. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & Terrestrial Time (Modified Julian Date) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Y} & Satellite state vector in the ICRF/\+EME2000 system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Acceleration (a=d\texorpdfstring{$^\wedge$}{\string^}2r/dt\texorpdfstring{$^\wedge$}{\string^}2) in the ICRF/\+EME2000 system 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accel_8hpp_a28040ec3672b4e1805218ad1cd43bfa0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_accel_8hpp_a28040ec3672b4e1805218ad1cd43bfa0_icgraph}
+\end{center}
+\end{figure}

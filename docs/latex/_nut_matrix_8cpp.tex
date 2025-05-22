@@ -1,0 +1,72 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/\+Nut\+Matrix.cpp File Reference}
+\hypertarget{_nut_matrix_8cpp}{}\label{_nut_matrix_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/NutMatrix.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/NutMatrix.cpp}}
+
+
+Source of the Nut\+Matrix operation. It computes the transformation from mean to true equator and equinox.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+{\ttfamily \#include "{}../include/\+Mean\+Obliquity.\+hpp"{}}\newline
+{\ttfamily \#include "{}../include/\+Nut\+Angles.\+hpp"{}}\newline
+{\ttfamily \#include "{}../include/\+R\+\_\+x.\+hpp"{}}\newline
+{\ttfamily \#include "{}../include/\+R\+\_\+z.\+hpp"{}}\newline
+Include dependency graph for Nut\+Matrix.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nut_matrix_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_nut_matrix_8cpp_ac7fb7e48f2d2d4fd63ac42e17e44ff23}{Nut\+Matrix}} (double Mjd\+\_\+\+TT)
+\begin{DoxyCompactList}\small\item\em Computes the transformation from mean to true equator and equinox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source of the Nut\+Matrix operation. It computes the transformation from mean to true equator and equinox. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000059}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_nut_matrix_8cpp_ac7fb7e48f2d2d4fd63ac42e17e44ff23}\index{NutMatrix.cpp@{NutMatrix.cpp}!NutMatrix@{NutMatrix}}
+\index{NutMatrix@{NutMatrix}!NutMatrix.cpp@{NutMatrix.cpp}}
+\doxysubsubsection{\texorpdfstring{NutMatrix()}{NutMatrix()}}
+{\footnotesize\ttfamily \label{_nut_matrix_8cpp_ac7fb7e48f2d2d4fd63ac42e17e44ff23} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Nut\+Matrix (\begin{DoxyParamCaption}\item[{double}]{Mjd\+\_\+\+TT}{}\end{DoxyParamCaption})}
+
+
+
+Computes the transformation from mean to true equator and equinox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Mjd\+\_\+\+TT} & Modified Julian Date (Terrestrial Time). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The nutation matrix from the mean equator and equinox to the true equator and equinox. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{_nut_matrix_8cpp_ac7fb7e48f2d2d4fd63ac42e17e44ff23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nut_matrix_8cpp_ac7fb7e48f2d2d4fd63ac42e17e44ff23_icgraph}
+\end{center}
+\end{figure}

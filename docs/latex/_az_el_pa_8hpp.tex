@@ -1,0 +1,77 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+Az\+El\+Pa.hpp File Reference}
+\hypertarget{_az_el_pa_8hpp}{}\label{_az_el_pa_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/AzElPa.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/AzElPa.hpp}}
+
+
+This header contains the Az\+El\+Pa operation. Computes azimuth, elevation and partials from local tangent coordinates.  
+
+
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}../include/\+Matrix.\+hpp"{}}\newline
+Include dependency graph for Az\+El\+Pa.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{_az_el_pa_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{_az_el_pa_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ double, double, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ \mbox{\hyperlink{_az_el_pa_8hpp_ae89a6c135135b96ec7057c45dced4159}{Az\+El\+Pa}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&s)
+\begin{DoxyCompactList}\small\item\em Computes azimuth, elevation and partials from local tangent coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the Az\+El\+Pa operation. Computes azimuth, elevation and partials from local tangent coordinates. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_az_el_pa_8hpp_ae89a6c135135b96ec7057c45dced4159}\index{AzElPa.hpp@{AzElPa.hpp}!AzElPa@{AzElPa}}
+\index{AzElPa@{AzElPa}!AzElPa.hpp@{AzElPa.hpp}}
+\doxysubsubsection{\texorpdfstring{AzElPa()}{AzElPa()}}
+{\footnotesize\ttfamily \label{_az_el_pa_8hpp_ae89a6c135135b96ec7057c45dced4159} 
+tuple$<$ double, double, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ Az\+El\+Pa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Computes azimuth, elevation and partials from local tangent coordinates. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & Topocentric local tangent coordinates (East-\/\+North-\/\+Zenith frame). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing azimuth, elevation, and their partials with respect to s. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{_az_el_pa_8hpp_ae89a6c135135b96ec7057c45dced4159_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_az_el_pa_8hpp_ae89a6c135135b96ec7057c45dced4159_icgraph}
+\end{center}
+\end{figure}

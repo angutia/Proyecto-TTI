@@ -1,0 +1,89 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/include/\+Meas\+Update.hpp File Reference}
+\hypertarget{_meas_update_8hpp}{}\label{_meas_update_8hpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/MeasUpdate.hpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/include/MeasUpdate.hpp}}
+
+
+This header contains the Meas\+Update operation. Kalman filter measurement update.  
+
+
+{\ttfamily \#include "{}../include/matrix.\+hpp"{}}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+Include dependency graph for Meas\+Update.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_meas_update_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{_meas_update_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple$<$ \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ \mbox{\hyperlink{_meas_update_8hpp_afe270463d7fe5600157bf4c9940a27e7}{Meas\+Update}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&x, \mbox{\hyperlink{class_matrix}{Matrix}} \&z, \mbox{\hyperlink{class_matrix}{Matrix}} \&g, \mbox{\hyperlink{class_matrix}{Matrix}} \&s, \mbox{\hyperlink{class_matrix}{Matrix}} \&G, \mbox{\hyperlink{class_matrix}{Matrix}} \&P, int n)
+\begin{DoxyCompactList}\small\item\em Kalman filter measurement update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the Meas\+Update operation. Kalman filter measurement update. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000020}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_meas_update_8hpp_afe270463d7fe5600157bf4c9940a27e7}\index{MeasUpdate.hpp@{MeasUpdate.hpp}!MeasUpdate@{MeasUpdate}}
+\index{MeasUpdate@{MeasUpdate}!MeasUpdate.hpp@{MeasUpdate.hpp}}
+\doxysubsubsection{\texorpdfstring{MeasUpdate()}{MeasUpdate()}}
+{\footnotesize\ttfamily \label{_meas_update_8hpp_afe270463d7fe5600157bf4c9940a27e7} 
+tuple$<$ \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \&, \mbox{\hyperlink{class_matrix}{Matrix}} \& $>$ Meas\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{x}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{z}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{g}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{s}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{G}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{P}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Kalman filter measurement update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & State vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em z} & Measurement vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em g} & Measurement model \\
+\hline
+\mbox{\texttt{ in}}  & {\em s} & Measurement noise \\
+\hline
+\mbox{\texttt{ in}}  & {\em G} & Measurement matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & State covariance matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & State dimension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tuple containing the Kalman gain, updated state vector, and updated covariance matrix 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{_meas_update_8hpp_afe270463d7fe5600157bf4c9940a27e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_meas_update_8hpp_afe270463d7fe5600157bf4c9940a27e7_icgraph}
+\end{center}
+\end{figure}

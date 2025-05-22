@@ -1,0 +1,74 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/\+Position.cpp File Reference}
+\hypertarget{_position_8cpp}{}\label{_position_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/Position.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/Position.cpp}}
+
+
+Source of the Position operation. Computes the position vector (r \mbox{[}m\mbox{]}) from geodetic coordinates (Longitude \mbox{[}rad\mbox{]}, latitude \mbox{[}rad\mbox{]}, altitude \mbox{[}m\mbox{]}).  
+
+
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}matrix.\+hpp"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}\+SAT\+\_\+\+Const.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Position.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_position_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{_position_8cpp_ad3ff3004edb305ae3aed0230373b848e}{Position}} (double lon, double lat, double h)
+\begin{DoxyCompactList}\small\item\em Computes the position vector (r \mbox{[}m\mbox{]}) from geodetic coordinates (Longitude \mbox{[}rad\mbox{]}, latitude \mbox{[}rad\mbox{]}, altitude \mbox{[}m\mbox{]}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source of the Position operation. Computes the position vector (r \mbox{[}m\mbox{]}) from geodetic coordinates (Longitude \mbox{[}rad\mbox{]}, latitude \mbox{[}rad\mbox{]}, altitude \mbox{[}m\mbox{]}). 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000061}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_position_8cpp_ad3ff3004edb305ae3aed0230373b848e}\index{Position.cpp@{Position.cpp}!Position@{Position}}
+\index{Position@{Position}!Position.cpp@{Position.cpp}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}}
+{\footnotesize\ttfamily \label{_position_8cpp_ad3ff3004edb305ae3aed0230373b848e} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Position (\begin{DoxyParamCaption}\item[{double}]{lon}{, }\item[{double}]{lat}{, }\item[{double}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Computes the position vector (r \mbox{[}m\mbox{]}) from geodetic coordinates (Longitude \mbox{[}rad\mbox{]}, latitude \mbox{[}rad\mbox{]}, altitude \mbox{[}m\mbox{]}). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lon} & Longitude \mbox{[}rad\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lat} & Latitude \mbox{[}rad\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & Altitude \mbox{[}m\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position vector (r \mbox{[}m\mbox{]}). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{_position_8cpp_ad3ff3004edb305ae3aed0230373b848e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_position_8cpp_ad3ff3004edb305ae3aed0230373b848e_icgraph}
+\end{center}
+\end{figure}

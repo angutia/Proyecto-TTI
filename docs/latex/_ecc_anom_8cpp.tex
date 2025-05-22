@@ -1,0 +1,79 @@
+\doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/\+Ecc\+Anom.cpp File Reference}
+\hypertarget{_ecc_anom_8cpp}{}\label{_ecc_anom_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/EccAnom.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/EccAnom.cpp}}
+
+
+Source of the Ecc\+Anom operation. It computes the eccentric anomaly for elliptic orbits.  
+
+
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}matrix.\+hpp"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}global.\+hpp"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}\+Ecc\+Anom.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Ecc\+Anom.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ecc_anom_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_ecc_anom_8cpp_a525335710b53cb064ca56b936120431e}{\+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_ecc_anom_8cpp_a2ad531000471d74f459467a747a79aff}{Ecc\+Anom}} (double M, double e)
+\begin{DoxyCompactList}\small\item\em Computes the eccentric anomaly for elliptic orbits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source of the Ecc\+Anom operation. It computes the eccentric anomaly for elliptic orbits. 
+
+\begin{DoxyAuthor}{Author}
+Ander Gutiérrez Andrés. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000042}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_ecc_anom_8cpp_a525335710b53cb064ca56b936120431e}\index{EccAnom.cpp@{EccAnom.cpp}!\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}}
+\index{\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}!EccAnom.cpp@{EccAnom.cpp}}
+\doxysubsubsection{\texorpdfstring{\_USE\_MATH\_DEFINES}{\_USE\_MATH\_DEFINES}}
+{\footnotesize\ttfamily \label{_ecc_anom_8cpp_a525335710b53cb064ca56b936120431e} 
+\#define \+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_ecc_anom_8cpp_a2ad531000471d74f459467a747a79aff}\index{EccAnom.cpp@{EccAnom.cpp}!EccAnom@{EccAnom}}
+\index{EccAnom@{EccAnom}!EccAnom.cpp@{EccAnom.cpp}}
+\doxysubsubsection{\texorpdfstring{EccAnom()}{EccAnom()}}
+{\footnotesize\ttfamily \label{_ecc_anom_8cpp_a2ad531000471d74f459467a747a79aff} 
+double Ecc\+Anom (\begin{DoxyParamCaption}\item[{double}]{M}{, }\item[{double}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Computes the eccentric anomaly for elliptic orbits. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em M} & Mean anomaly in \mbox{[}rad\mbox{]}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em e} & Eccentricity of the orbit \mbox{[}0,1\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Eccentric anomaly in \mbox{[}rad\mbox{]}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ecc_anom_8cpp_a2ad531000471d74f459467a747a79aff_icgraph}
+\end{center}
+\end{figure}
