@@ -1,0 +1,10 @@
+<map id="PoleMatrix" name="PoleMatrix">
+<area shape="rect" id="Node000001" title="Transforms coordinates from pseudo Earth&#45;fixed to Earth&#45;fixed for a given date." alt="" coords="5,31,89,57"/>
+<area shape="rect" id="Node000002" href="$_r__x_8cpp.html#ab96741dfe3b3590793f2b318ceed5f53" title="Computes the rotation matrix around the x&#45;axis." alt="" coords="137,5,182,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,32,121,24,122,30,90,37"/>
+<area shape="rect" id="Node000004" href="$_r__y_8cpp.html#a25114557991f92fd6b027118c591a98f" title="Computes the rotation matrix around the y&#45;axis." alt="" coords="137,56,182,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,51,122,58,121,64,89,56"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Creates a matrix of zeros." alt="" coords="230,31,283,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,22,216,31,214,36,182,27"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="182,61,214,52,216,57,183,66"/>
+</map>

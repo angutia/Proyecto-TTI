@@ -1,0 +1,32 @@
+<map id="EqnEquinox" name="EqnEquinox">
+<area shape="rect" id="Node000001" title="Computes the equation of the equinoxes." alt="" coords="809,31,901,57"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#aa7916dd992a67b3a01040b7767255b7e" title=" " alt="" coords="649,5,761,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="793,36,761,31,762,26,794,31"/>
+<area shape="rect" id="Node000005" href="$gast_8cpp.html#a4eb2d09c87615520077aec1005b8e0ad" title="Greenwich Apparent Sidereal Time calculation." alt="" coords="682,56,728,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="794,57,729,68,728,63,793,52"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,132,173,159"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="633,13,547,10,441,13,385,20,329,31,274,47,222,68,200,82,180,99,150,134,146,130,176,96,197,77,220,63,273,42,328,26,384,15,441,8,547,4,634,8"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,132,55,159"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,148,55,148,55,143,87,143"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#ab9e86dc21278f2259d50189de91db3d2" title=" " alt="" coords="524,56,592,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="667,72,592,72,592,67,667,67"/>
+<area shape="rect" id="Node000007" href="$_g_h_a_matrix_8cpp.html#a49218ae38846c1175342d13a65d41f4d" title="Transformation from true equator and equinox to Earth equator and Greenwich meridian system." alt="" coords="515,183,601,209"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="679,95,577,184,573,180,675,91"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="508,69,449,67,377,70,298,79,222,97,187,114,158,134,155,129,184,109,220,92,298,74,376,64,449,62,508,63"/>
+<area shape="rect" id="Node000008" href="$_accel_8cpp.html#a28040ec3672b4e1805218ad1cd43bfa0" title="Computes the acceleration of an Earth orbiting satellite due to the Earth&#39;s harmonic gravity field,..." alt="" coords="386,157,440,184"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="499,188,440,178,441,173,500,183"/>
+<area shape="rect" id="Node000011" href="$tests_8cpp.html#aef6e1e3472cc4668672211f02bc22fad" title=" " alt="" coords="359,208,467,235"/>
+<area shape="poly" id="edge13_Node000007_Node000011" title=" " alt="" coords="500,209,468,215,467,209,499,204"/>
+<area shape="rect" id="Node000012" href="$_var_eqn_8cpp.html#a6e153d0ae05034cb5b346189ebb847d3" title="Computes the variational equations, i.e. the derivative of the state vector and the state transition ..." alt="" coords="381,259,445,285"/>
+<area shape="poly" id="edge15_Node000007_Node000012" title=" " alt="" coords="521,220,468,249,445,261,443,256,465,244,518,215"/>
+<area shape="rect" id="Node000009" href="$tests_8cpp.html#ad6e00c9978210449973a47573878ff32" title=" " alt="" coords="228,107,304,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="370,159,303,135,305,130,372,154"/>
+<area shape="rect" id="Node000010" href="$tests_8cpp.html#a04797c4f0e3862eb9efe1ae9ba9163c7" title=" " alt="" coords="221,157,311,184"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="370,173,312,173,312,168,370,168"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="214,133,174,141,173,136,213,128"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="205,161,173,155,174,150,206,156"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="343,222,283,214,220,199,184,181,155,161,158,157,187,176,222,193,284,209,344,217"/>
+<area shape="rect" id="Node000013" href="$tests_8cpp.html#a47e267fa98a83e79696470d1b6e67569" title=" " alt="" coords="224,259,308,285"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="366,275,309,275,309,269,366,269"/>
+<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="230,251,219,242,178,199,147,161,151,157,182,195,223,238,234,247"/>
+</map>

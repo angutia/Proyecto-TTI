@@ -1,0 +1,9 @@
+<map id="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/gast.cpp" name="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/gast.cpp">
+<area shape="rect" id="Node000001" title="Source of the gast operation. Greenwich Apparent Sidereal Time calculation." alt="" coords="56,5,249,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,63,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,66,65,105,61,100,113,62"/>
+<area shape="rect" id="Node000003" href="$gmst_8hpp.html" title="This header contains the gmst operation. Greenwich Mean Sidereal Time calculation." alt="" coords="86,112,219,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,64,155,96,150,96,150,64"/>
+<area shape="rect" id="Node000004" href="$_eqn_equinox_8hpp.html" title="This header contains the EqnEquinox operation. It computes the equation of the equinoxes...." alt="" coords="243,112,417,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,62,292,102,290,107,209,67"/>
+</map>
