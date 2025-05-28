@@ -21,6 +21,7 @@ var tests_8cpp =
     [ "JPL_Eph_DE430_01", "tests_8cpp.html#aafe4f7a2d6dbafccd79b1488100e9c4e", null ],
     [ "Legendre_01", "tests_8cpp.html#ac482aba5ccf79b45ddd3ad6e951cfe03", null ],
     [ "LTC_01", "tests_8cpp.html#a1d10c50138effaa249aab2f6bc65e7b1", null ],
+    [ "m_assign_01", "tests_8cpp.html#ac9dd26f20cb6e1b96ea1a4d25845c484", null ],
     [ "m_assign_column_01", "tests_8cpp.html#aba1fe36fec979cdb9c9e00ab8c319bf8", null ],
     [ "m_assign_row_01", "tests_8cpp.html#a281517426974f02495d940213e558ff8", null ],
     [ "m_div_01", "tests_8cpp.html#afdc481dea95dec81570612a575354cb1", null ],

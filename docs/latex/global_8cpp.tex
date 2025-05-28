@@ -1,12 +1,15 @@
 \doxysection{C\+:/\+Users/\+Pc\+Box Gaming/\+Documents/\+Git\+Hub/\+Proyecto-\/\+TTI/src/global.cpp File Reference}
 \hypertarget{global_8cpp}{}\label{global_8cpp}\index{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/global.cpp@{C:/Users/PcBox Gaming/Documents/GitHub/Proyecto-\/TTI/src/global.cpp}}
 {\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}global.\+hpp"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}\+Mjday.\+hpp"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}include\textbackslash{}\+SAT\+\_\+\+Const.\+hpp"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
 Include dependency graph for global.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{global_8cpp__incl}
+\includegraphics[width=350pt]{global_8cpp__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Functions}
@@ -17,6 +20,8 @@ void \mbox{\hyperlink{global_8cpp_af1504e3e975e6f502042c7fa8b7abe60}{eop19620101
 void \mbox{\hyperlink{global_8cpp_a6b92ea032a8e792ede2023c6d46bd53c}{GGM03S}} ()
 \item 
 void \mbox{\hyperlink{global_8cpp_ae38d918efc2790a2d633e60440a3bbab}{DE430\+Coeff}} ()
+\item 
+void \mbox{\hyperlink{global_8cpp_a4eb2c87949d7faa807f6b9f9acb21a92}{GEOS3}} (int f)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -31,7 +36,9 @@ void \mbox{\hyperlink{global_8cpp_ae38d918efc2790a2d633e60440a3bbab}{DE430\+Coef
 \item 
 \mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{global_8cpp_abdf16b7def3047932352a98d4f907e0a}{PC}}
 \item 
-double \mbox{\hyperlink{global_8cpp_a974b448c3d0a13d483d36ef15de369b5}{eps}} = 2.\+2204e-\/16
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{global_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78}{obs}}
+\item 
+double \mbox{\hyperlink{global_8cpp_a974b448c3d0a13d483d36ef15de369b5}{eps}} = 2.\+22044604925031e-\/16
 \end{DoxyCompactItemize}
 
 
@@ -42,8 +49,7 @@ double \mbox{\hyperlink{global_8cpp_a974b448c3d0a13d483d36ef15de369b5}{eps}} = 2
 {\footnotesize\ttfamily \label{global_8cpp_ae38d918efc2790a2d633e60440a3bbab} 
 void DE430\+Coeff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -64,8 +70,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{global_8cpp_af1504e3e975e6f502042c7fa8b7abe60} 
 void eop19620101 (\begin{DoxyParamCaption}\item[{int}]{c}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -80,14 +85,35 @@ Here is the caller graph for this function\+:
 \includegraphics[width=227pt]{global_8cpp_af1504e3e975e6f502042c7fa8b7abe60_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{global_8cpp_a4eb2c87949d7faa807f6b9f9acb21a92}\index{global.cpp@{global.cpp}!GEOS3@{GEOS3}}
+\index{GEOS3@{GEOS3}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{GEOS3()}{GEOS3()}}
+{\footnotesize\ttfamily \label{global_8cpp_a4eb2c87949d7faa807f6b9f9acb21a92} 
+void GEOS3 (\begin{DoxyParamCaption}\item[{int}]{f}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{global_8cpp_a4eb2c87949d7faa807f6b9f9acb21a92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{global_8cpp_a4eb2c87949d7faa807f6b9f9acb21a92_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{global_8cpp_a6b92ea032a8e792ede2023c6d46bd53c}\index{global.cpp@{global.cpp}!GGM03S@{GGM03S}}
 \index{GGM03S@{GGM03S}!global.cpp@{global.cpp}}
 \doxysubsubsection{\texorpdfstring{GGM03S()}{GGM03S()}}
 {\footnotesize\ttfamily \label{global_8cpp_a6b92ea032a8e792ede2023c6d46bd53c} 
 void GGM03S (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -127,7 +153,13 @@ Here is the caller graph for this function\+:
 \index{eps@{eps}!global.cpp@{global.cpp}}
 \doxysubsubsection{\texorpdfstring{eps}{eps}}
 {\footnotesize\ttfamily \label{global_8cpp_a974b448c3d0a13d483d36ef15de369b5} 
-double eps = 2.\+2204e-\/16}
+double eps = 2.\+22044604925031e-\/16}
+
+\Hypertarget{global_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78}\index{global.cpp@{global.cpp}!obs@{obs}}
+\index{obs@{obs}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{obs}{obs}}
+{\footnotesize\ttfamily \label{global_8cpp_a61c854c38aa6b9b8d4ed8d7c52530b78} 
+\mbox{\hyperlink{class_matrix}{Matrix}} obs}
 
 \Hypertarget{global_8cpp_abdf16b7def3047932352a98d4f907e0a}\index{global.cpp@{global.cpp}!PC@{PC}}
 \index{PC@{PC}!global.cpp@{global.cpp}}
