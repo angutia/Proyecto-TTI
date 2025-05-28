@@ -211,6 +211,9 @@ Matrix& Matrix::operator / (double n) {
 }
 
 Matrix& Matrix::operator = (Matrix &m) {
+    if (this == &m) {
+        return m;
+    }
 
     this->n_row = m.n_row;
 	this->n_column = m.n_column;
@@ -505,14 +508,14 @@ double norm(Matrix &m) {
 }
 
 double dot(Matrix &v1, Matrix &v2) {
-    if (v1.n_column != v2.n_column || v1.n_row != 1 || v2.n_row != 1) {
+    if (v1.n_column != v2.n_column || (v1.n_row != 1 && v1.n_column != 1) || (v2.n_row != 1 && v2.n_column != 1)) {
         cout << "Matrix dot: error in n_row/n_column\n";
         exit(EXIT_FAILURE);
     }
     
     double aux = 0.0;
-    
-    for(int i = 1; i <= v1.n_column; i++) {
+    int rango = (v1.n_row == 1) ? v1.n_column : v1.n_row;
+    for(int i = 1; i <= rango; i++) {
         aux += v1(i) * v2(i);
     }
     

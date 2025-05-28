@@ -9,7 +9,7 @@ Matrix Cnm;
 Matrix Snm;
 Matrix PC;
 Matrix obs;
-double eps = 2.2204e-16;
+double eps = 2.22044604925031e-16;
 
 void eop19620101(int c){
 	eopdata = zeros(13,c);
@@ -116,7 +116,7 @@ void GEOS3(int f){
         obs(i,2) = (SAT_Const::Rad)*AZ;
         obs(i,3) = (SAT_Const::Rad)*EL;
         obs(i,4) = 1e3*DIST;
-
     }
 
+    fclose(fid);
 }

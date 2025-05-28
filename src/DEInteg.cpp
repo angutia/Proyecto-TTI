@@ -23,9 +23,17 @@
 
 Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, double relerr, double abserr, int n_eqn, Matrix& y){
 
+    double twou, fouru, told, epsilon, x, h, hi, ki, kold, temp1, term, psijm1, gamma, eta,
+    i, p5eps, ifail, round, sum, absh, hold, hnew, k, kp1, kp2, km1, km2, ns, nsp1,
+    realns, im1, temp2, reali, temp4, nsm2, limit1, temp5, temp3, nsp2, limit2, temp6,
+    ip1, tau, xold, erkm2, erkm1, erk, err, knew, erkp1, r, rho_;
+    double del, absdel, tend, nostep, kle4, releps, abseps, delsgn;
+    bool stiff, OldPermit=false, start=false, crash=false, phase1=false, nornd=false, success=false, PermitTOUT = true;
+    Matrix yy, yout, ypout, g, rho, wt, v, w, phi, p, yp,sig,alpha,beta,psi_;
+
     // maxnum = 500;
-    double twou  = 2*eps;
-    double fouru = 4*eps;
+    twou  = 2*eps;
+    fouru = 4*eps;
 
     typedef struct {
         int DE_INIT, DE_DONE, DE_BADACC, DE_NUMSTEPS, DE_STIFF, DE_INVPARAM;
@@ -40,8 +48,8 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
     DE_STATE.DE_INVPARAM = 6;  // Invalid input parameters
 
     int State_ = DE_STATE.DE_INIT;
-    bool PermitTOUT = true;         // Allow integration past tout by default
-    double told = 0;
+    PermitTOUT = true;         // Allow integration past tout by default
+    told = 0;
 
     // Powers of two (two(n)=2^n)
     Matrix two(14);
@@ -55,19 +63,19 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
     gstr(9) = 0.00936; gstr(10) = 0.00789; gstr(11) = 0.00679; gstr(12) = 0.00592;
     gstr(13) = 0.00524; gstr(14) = 0.00468;
 
-    Matrix yy    = zeros(n_eqn,1);    // Allocate vectors with proper dimension
-    Matrix wt    = zeros(n_eqn,1);
-    Matrix p     = zeros(n_eqn,1);
-    Matrix yp    = zeros(n_eqn,1);
-    Matrix phi   = zeros(n_eqn,17);
-    Matrix g     = zeros(14,1);
-    Matrix sig   = zeros(14,1);
-    Matrix rho   = zeros(14,1);
-    Matrix w     = zeros(13,1);
-    Matrix alpha = zeros(13,1);
-    Matrix beta  = zeros(13,1);
-    Matrix v     = zeros(13,1);
-    Matrix psi_  = zeros(13,1);
+    yy    = zeros(n_eqn,1);    // Allocate vectors with proper dimension
+    wt    = zeros(n_eqn,1);
+    p     = zeros(n_eqn,1);
+    yp    = zeros(n_eqn,1);
+    phi   = zeros(n_eqn,17);
+    g     = zeros(14,1);
+    sig   = zeros(14,1);
+    rho   = zeros(14,1);
+    w     = zeros(13,1);
+    alpha = zeros(13,1);
+    beta  = zeros(13,1);
+    v     = zeros(13,1);
+    psi_  = zeros(13,1);
 
     // while(true)
 
@@ -79,7 +87,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
 
     // Test for improper parameters
 
-    double epsilon = fmax(relerr,abserr);
+    epsilon = fmax(relerr,abserr);
 
     if ( ( relerr <  0.0         ) ||               // Negative relative error bound
         ( abserr <  0.0         ) ||                // Negative absolute error bound
@@ -96,27 +104,19 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
     // number of steps. Adjust input error tolerances to define
     // weight vector for subroutine STEP.
 
-    double del    = tout - t;
-    double absdel = fabs(del);
+    del    = tout - t;
+    absdel = fabs(del);
 
-    double tend   = t + 100.0*del;
+    tend   = t + 100.0*del;
     if (!PermitTOUT){
         tend = tout;
     }
 
-    int nostep = 0;
-    int kle4   = 0;
-    bool stiff  = false;
-    double releps = relerr/epsilon;
-    double abseps = abserr/epsilon;
-
-    bool OldPermit = false;
-    double delsgn;
-    bool start;
-    double x;
-    double kold;
-    double hnew;
-    double h;
+    nostep = 0;
+    kle4   = 0;
+    stiff  = false;
+    releps = relerr/epsilon;
+    abseps = abserr/epsilon;
 
     if  ( (State_==DE_STATE.DE_INIT) || (!OldPermit) || (delsgn*del<=0.0) ){
         // On start and restart also set the work variables x and yy(*),
@@ -132,24 +132,24 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
 
         // If already past output point, interpolate solution and return
         if (fabs(x-t) >= absdel){
-            Matrix yout  = zeros(n_eqn,1);
-            Matrix ypout = zeros(n_eqn,1);
+            yout  = zeros(n_eqn,1);
+            ypout = zeros(n_eqn,1);
             g(2)   = 1.0;
             rho(2) = 1.0;
-            double hi = tout - x;
-            double ki = kold + 1;
+            hi = tout - x;
+            ki = kold + 1;
             
             // Initialize w[*] for computing g[*]
             for (int i=1; i<=ki; i++){
-                int temp1 = i;
+                temp1 = i;
                 w(i+1) = 1.0/temp1;
             }
             // Compute g[*]
-            double term = 0.0;
+            term = 0.0;
             for (int j=2; j<=ki; j++){
-                double psijm1 = psi_(j);
-                double gamma = (hi + term)/psijm1;
-                double eta = hi/psijm1;
+                psijm1 = psi_(j);
+                gamma = (hi + term)/psijm1;
+                eta = hi/psijm1;
                 for (int i=1; i<=ki+1-j; i++){
                     w(i+1) = gamma*w(i+1) - eta*w(i+2);
                 }
@@ -161,7 +161,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             // Interpolate for the solution yout and for
             // the derivative of the solution ypout               
             for (int j=1; j<=ki; j++){
-                int i = ki+1-j;
+                i = ki+1-j;
                 yout  = yout  + transpose(phi.extract_column(i+1))*g(i+1);
                 ypout = ypout + transpose(phi.extract_column(i+1))*rho(i+1);
             }
@@ -216,26 +216,24 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         // acceptable one.                                                   
         //                                                                   
 
-        bool crash;
-
         if (fabs(h) < fouru*fabs(x)){
             h = sign_(fouru*fabs(x),h);
             crash = true;
             return y;           // Exit 
         }
 
-        double p5eps  = 0.5*epsilon;
+        p5eps  = 0.5*epsilon;
         crash  = false;
         g(2)   = 1.0;
         g(3)   = 0.5;
         sig(2) = 1.0;
 
-        int ifail = 0;
+        ifail = 0;
 
         // If error tolerance is too small, increase it to an 
         // acceptable value.                                  
 
-        double round = 0.0;
+        round = 0.0;
         for (int l=1; l<=n_eqn; l++){
             round = round + (y(l)*y(l))/(wt(l)*wt(l));
         }
@@ -246,22 +244,17 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             return y;
         }
 
-        int k;
-        double hold;
-        bool nornd;
-        bool phase1;
-
         if (start){
         // Initialize. Compute appropriate step size for first step. 
             yp = func(x,y);
-            double sum = 0.0;
+            sum = 0.0;
             for (int l=1; l<=n_eqn; l++){
                 phi(l,2) = yp(l);
                 phi(l,3) = 0.0;
                 sum = sum + (yp(l)*yp(l))/(wt(l)*wt(l));
             }
             sum  = sqrt(sum);
-            double absh = fabs(h);
+            absh = fabs(h);
             if (epsilon<16.0*sum*h*h){
                 absh=0.25*sqrt(epsilon/sum);
             }
@@ -284,15 +277,10 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         //                                                                   
         // End block 0                                                       
         //    
-        
-        int kp1, kp2, km1, km2, knew;
-        double erkm1;
-        int ns;
-        double absh;
 
         //                                                                   
         // Repeat blocks 1, 2 (and 3) until step is successful               
-        //                                                                   
+        //                                                           
         while(true){
             
             //                                                                 
@@ -315,25 +303,25 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             if (ns<=kold){
                 ns=ns+1;
             }
-            int nsp1 = ns+1;
+            nsp1 = ns+1;
             
             if (k>=ns){
                 // Compute those components of alpha[*],beta[*],psi[*],sig[*] 
                 // which are changed                                          
                 beta(ns+1) = 1.0;
-                int realns = ns;
+                realns = ns;
                 alpha(ns+1) = 1.0/realns;
-                double temp1 = h*realns;
+                temp1 = h*realns;
                 sig(nsp1+1) = 1.0;
                 if (k>=nsp1){
                     for (int i=nsp1; i<=k; i++){
-                        int im1   = i-1;
-                        double temp2 = psi_(im1+1);
+                        im1   = i-1;
+                        temp2 = psi_(im1+1);
                         psi_(im1+1) = temp1;
                         beta(i+1)  = beta(im1+1)*psi_(im1+1)/temp2;
                         temp1    = temp2 + h;
                         alpha(i+1) = h/temp1;
-                        int reali = i;
+                        reali = i;
                         sig(i+2) = reali*alpha(i+1)*sig(i+1);
                     }
                 }
@@ -343,18 +331,18 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                 if (ns>1){
                     // If order was raised, update diagonal part of v[*]
                     if (k>kold){
-                        int temp4 = k*kp1;
+                        temp4 = k*kp1;
                         v(k+1) = 1.0/temp4;
-                        int nsm2 = ns-2;
+                        nsm2 = ns-2;
                         for (int j=1; j<=nsm2; j++){
-                            int i = k-j;
+                            i = k-j;
                             v(i+1) = v(i+1) - alpha(j+2)*v(i+2);
                         }
                     }
                     
                     // Update V[*] and set W[*]
-                    int limit1 = kp1 - ns;
-                    double temp5  = alpha(ns+1);
+                    limit1 = kp1 - ns;
+                    temp5  = alpha(ns+1);
                     for (int iq=1; iq<=limit1; iq++){
                         v(iq+1) = v(iq+1) - temp5*v(iq+2);
                         w(iq+1) = v(iq+1);
@@ -362,18 +350,18 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                     g(nsp1+1) = w(2);
                 } else {
                     for (int iq=1; iq<=k; iq++){
-                        int temp3 = iq*(iq+1);
+                        temp3 = iq*(iq+1);
                         v(iq+1) = 1.0/temp3;
                         w(iq+1) = v(iq+1);
                     }
                 }
                 
                 // Compute the g[*] in the work vector w[*]
-                int nsp2 = ns + 2;
+                nsp2 = ns + 2;
                 if (kp1>=nsp2){
                     for (int i=nsp2; i<=kp1; i++){
-                        int limit2 = kp2 - i;
-                        double temp6  = alpha(i);
+                        limit2 = kp2 - i;
+                        temp6  = alpha(i);
                         for (int iq=1; iq<=limit2; iq++){
                             w(iq+1) = w(iq+1) - temp6*w(iq+2);
                         }
@@ -381,7 +369,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                     }
                 }
             } // if K>=NS
-            
+
             //
             // End block 1
             //
@@ -397,7 +385,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             // Change phi to phi star
             if (k>=nsp1){
                 for (int i=nsp1; i<=k; i++){
-                    double temp1 = beta(i+1);
+                    temp1 = beta(i+1);
                     for (int l=1; l<=n_eqn; l++){
                         phi(l,i+1) = temp1 * phi(l,i+1);
                     }
@@ -411,36 +399,36 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                 p(l)       = 0.0;
             }
             for (int j=1; j<=k; j++){
-                int i_     = kp1 - j;
-                int ip1   = i_+1;
-                double temp2 = g(i_+1);
+                i     = kp1 - j;
+                ip1   = i+1;
+                temp2 = g(i+1);
                 for (int l=1; l<=n_eqn; l++){
-                    p(l)     = p(l) + temp2*phi(l,i_+1);
-                    phi(l,i_+1) = phi(l,i_+1) + phi(l,ip1+1);
+                    p(l)     = p(l) + temp2*phi(l,i+1);
+                    phi(l,i+1) = phi(l,i+1) + phi(l,ip1+1);
                 }
             }
             if (nornd){
                 p = y + p*h;
             } else {
                 for (int l=1; l<=n_eqn; l++){
-                    double tau = h*p(l) - phi(l,16);
+                    tau = h*p(l) - phi(l,16);
                     p(l) = y(l) + tau;
                     phi(l,17) = (p(l) - y(l)) - tau;
                 }
             }
-            double xold = x;
+            xold = x;
             x = x + h;
             absh = fabs(h);
             yp = func(x,p);
             
             // Estimate errors at orders k, k-1, k-2 
-            double erkm2 = 0.0;
+            erkm2 = 0.0;
             erkm1 = 0.0;
-            double erk = 0.0;
+            erk = 0.0;
             
             for (int l=1; l<=n_eqn; l++){
-                double temp3 = 1.0/wt(l);
-                double temp4 = yp(l) - phi(l,1+1);
+                temp3 = 1.0/wt(l);
+                temp4 = yp(l) - phi(l,1+1);
                 if (km2> 0){
                     erkm2 = erkm2 + ((phi(l,km1+1)+temp4)*temp3)*((phi(l,km1+1)+temp4)*temp3);
                 }
@@ -457,8 +445,8 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                 erkm1 = absh*sig(k+1)*gstr(km1+1)*sqrt(erkm1);
             }
             
-            double temp5 = absh*sqrt(erk);
-            double err = temp5*(g(k+1)-g(kp1+1));
+            temp5 = absh*sqrt(erk);
+            err = temp5*(g(k+1)-g(kp1+1));
             erk = temp5*sig(kp1+1)*gstr(k+1);
             knew = k;
             
@@ -483,8 +471,8 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             // blocks 1 and 2 after executing block 3
             //
             
-            bool success = (err<=epsilon);
-            
+            success = (err<=epsilon);
+
             if (!success){
             
                 //
@@ -502,8 +490,8 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                 phase1 = false; 
                 x = xold;
                 for (int i=1; i<=k; i++){
-                    double temp1 = 1.0/beta(i+1);
-                    int ip1 = i+1;
+                    temp1 = 1.0/beta(i+1);
+                    ip1 = i+1;
                     for (int l=1; l<=n_eqn; l++){
                         phi(l,i+1)=temp1*(phi(l,i+1)-phi(l,ip1+1));
                     }
@@ -518,7 +506,7 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
                 // On third failure, set order to one. 
                 // Thereafter, use optimal step size   
                 ifail = ifail+1;
-                double temp2 = 0.5;
+                temp2 = 0.5;
                 if (ifail>3){ 
                     if (p5eps < 0.25*erk){
                         temp2 = sqrt(p5eps/erk);
@@ -560,14 +548,14 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         hold = h;
 
         // Correct and evaluate
-        double temp1 = h*g(kp1+1);
+        temp1 = h*g(kp1+1);
         if (nornd){
             for (int l=1; l<=n_eqn; l++){
                 y(l) = p(l) + temp1*(yp(l) - phi(l,2));
             }
         } else {
             for (int l=1; l<=n_eqn; l++){
-                double rho_ = temp1*(yp(l) - phi(l,2)) - phi(l,17);
+                rho_ = temp1*(yp(l) - phi(l,2)) - phi(l,17);
                 y(l) = p(l) + rho_;
                 phi(l,16) = (y(l) - p(l)) - rho_;
             }
@@ -589,11 +577,10 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
         // - in first phase when always raise order,        
         // - already decided to lower order,                
         // - step size not constant so estimate unreliable  
-        double erkp1 = 0.0;
+        erkp1 = 0.0;
         if ( (knew==km1) || (k==12) ){
             phase1 = false;
         }
-        double erk;
         if (phase1){
             k = kp1;
             erk = erkp1;
@@ -638,8 +625,8 @@ Matrix& DEInteg(Matrix& func (double t, Matrix& Y), double t, double tout, doubl
             hnew = 2.0*h;
         } else {
             if (p5eps<erk){
-                int temp2 = k+1;
-                double r = p5eps/pow(erk,(1.0/temp2));
+                temp2 = k+1;
+                r = p5eps/pow(erk,(1.0/temp2));
                 hnew = absh*max(0.5, min(0.9,r));
                 hnew = sign_(max(hnew, fouru*fabs(x)), h);
             } else {

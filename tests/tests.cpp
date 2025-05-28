@@ -56,6 +56,34 @@ int m_equals(Matrix A, Matrix B, double p) {
 	return 1;
 }
 
+int m_assign_01() {
+    Matrix A(3,3);
+    A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0;
+
+    Matrix B(2,2);
+    B(1,1) = 2; B(1,2) =  0;
+	B(2,1) = 7; B(2,2) = -2;
+
+    Matrix C;
+
+    C=A;
+    B=A;
+    A=A;
+
+    Matrix R(3,3);
+    R(1,1) = 0; R(1,2) =  2; R(1,3) = 8;
+	R(2,1) = 1; R(2,2) = -1; R(2,3) = 0;
+	R(3,1) = 0; R(3,2) =  1; R(3,3) = 0;
+
+    _assert(m_equals(C, R, 1e-10));
+    _assert(m_equals(B, R, 1e-10));
+    _assert(m_equals(A, R, 1e-10));
+    
+    return 0;
+}
+
 int m_sum_01() {
     int f = 3;
     int c = 4;
@@ -1174,6 +1202,7 @@ int DEInteg_01() {
 
 int all_tests()
 {
+    _verify(m_assign_01);
     _verify(m_sum_01);
 	_verify(m_sumn_01);
     _verify(m_sub_01);
