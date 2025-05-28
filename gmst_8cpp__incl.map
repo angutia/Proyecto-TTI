@@ -1,0 +1,8 @@
+<map id="/github/workspace/src/gmst.cpp" name="/github/workspace/src/gmst.cpp">
+<area shape="rect" id="Node000001" title="Source of the gmst operation. Greenwich Mean Sidereal Time calculation." alt="" coords="5,5,155,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,168,109,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,47,60,81,58,100,59,119,70,153,65,154,53,120,52,100,55,80,67,45"/>
+<area shape="rect" id="Node000003" href="$Frac_8hpp.html" title="This header contains the Frac operation. It computes the fractional part of a number (y=x&#45;[x])." alt="" coords="68,94,194,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,45,117,79,112,82,90,48"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="124,121,99,156,95,153,120,118"/>
+</map>

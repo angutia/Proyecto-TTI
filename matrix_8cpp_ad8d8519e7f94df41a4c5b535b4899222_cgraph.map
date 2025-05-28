@@ -1,0 +1,6 @@
+<map id="inv" name="inv">
+<area shape="rect" id="Node000001" title="Inverts a matrix." alt="" coords="5,29,44,56"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#a127af89400a7243fcf299416b7aea989" title="Calculates the determinant of a matrix." alt="" coords="92,29,131,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,40,76,40,76,45,44,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="95,29,94,12,101,5,111,3,123,5,129,12,125,15,120,10,111,8,103,10,99,14,100,29"/>
+</map>

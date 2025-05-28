@@ -1,0 +1,16 @@
+<map id="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/AzElPa.cpp" name="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/AzElPa.cpp">
+<area shape="rect" id="Node000001" title="Source of the AzElPa operation. Computes azimuth, elevation and partials from local tangent coordinat..." alt="" coords="5,5,199,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,187,77,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,66,69,113,55,171,50,170,63,111,84,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="77,112,127,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,64,105,96,99,96,99,64"/>
+<area shape="rect" id="Node000004" href="$matrix_8hpp.html" title="This header contains the matrix operations." alt="" coords="151,112,290,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,62,193,100,190,105,139,66"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="192,142,93,183,91,178,190,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="111,187,168,213"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,141,166,178,163,174,205,137"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="191,187,250,213"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="223,139,223,171,218,171,218,139"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="274,187,346,213"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="238,137,284,175,281,179,235,141"/>
+</map>

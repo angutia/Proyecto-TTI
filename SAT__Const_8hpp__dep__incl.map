@@ -1,0 +1,15 @@
+<map id="/github/workspace/include/SAT_Const.hpp" name="/github/workspace/include/SAT_Const.hpp">
+<area shape="rect" id="Node000001" title="This header contains the definition of astronomical and mathematical constants." alt="" coords="427,5,600,46"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="Source of the Accel operation. It computes the acceleration of an Earth orbiting satellite due to the..." alt="" coords="5,94,155,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="412,49,167,97,156,99,155,94,166,91,411,43"/>
+<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html" title="Source of the AccelHarmonic operation. It computes the acceleration due to the harmonic gravity field..." alt="" coords="179,94,328,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="441,54,313,96,312,91,439,49"/>
+<area shape="rect" id="Node000004" href="$IERS_8cpp.html" title="Source of the IERS operation. Management of IERS time and polar motion data." alt="" coords="352,94,501,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="485,59,448,95,444,92,481,55"/>
+<area shape="rect" id="Node000005" href="$NutAngles_8cpp.html" title="Source of the NutAngles operation. It computes the nutation in longitude and obliquity." alt="" coords="525,94,675,135"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="546,55,582,92,579,95,542,59"/>
+<area shape="rect" id="Node000006" href="$PrecMatrix_8cpp.html" title="Source of the PrecMatrix operation. Precession transformation of equatorial coordinates." alt="" coords="699,94,848,135"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="588,49,715,91,713,96,586,54"/>
+<area shape="rect" id="Node000007" href="$VarEqn_8cpp.html" title="Source of the VarEqn operation. It computes the variational equations, i.e. the derivative of the sta..." alt="" coords="872,94,1021,135"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="615,43,861,91,872,94,871,99,859,97,614,49"/>
+</map>

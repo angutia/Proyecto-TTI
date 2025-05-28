@@ -1,0 +1,28 @@
+<map id="/github/workspace/src/NutMatrix.cpp" name="/github/workspace/src/NutMatrix.cpp">
+<area shape="rect" id="Node000001" title="Source of the NutMatrix operation. It computes the transformation from mean to true equator and equin..." alt="" coords="352,5,502,46"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="This header contains the matrix operations." alt="" coords="59,94,194,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,49,189,92,187,87,351,44"/>
+<area shape="rect" id="Node000007" href="$MeanObliquity_8hpp.html" title="This header contains the MeanObliquity operation. It computes the mean obliquity of the ecliptic." alt="" coords="512,94,694,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="472,44,563,85,561,90,470,49"/>
+<area shape="rect" id="Node000008" href="$NutAngles_8hpp.html" title="This header contains the NutAngles operation. Computes the nutation in longitude and obliquity." alt="" coords="718,94,880,120"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="503,40,727,88,726,93,502,45"/>
+<area shape="rect" id="Node000010" href="$R__x_8hpp.html" title="This header contains the R_x operation. Computes the rotation matrix around the x&#45;axis." alt="" coords="366,94,488,120"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="430,46,430,78,424,78,424,46"/>
+<area shape="rect" id="Node000012" href="$R__z_8hpp.html" title="This header contains the R_z operation. Computes the rotation matrix around the z&#45;axis." alt="" coords="219,94,341,120"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="391,49,317,89,314,84,389,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,168,62,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,122,63,160,60,156,109,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,168,144,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="127,120,122,153,117,152,122,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="264,168,321,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="156,118,251,159,249,164,154,123"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="168,168,240,193"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="142,118,182,155,178,159,138,122"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="774,168,824,193"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="802,120,802,152,796,152,796,120"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="405,123,330,162,327,158,403,118"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="352,168,488,193"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="428,120,425,152,420,152,423,120"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="285,119,290,152,285,153,280,120"/>
+<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="305,118,384,158,382,163,303,123"/>
+</map>

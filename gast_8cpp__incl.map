@@ -1,0 +1,9 @@
+<map id="/github/workspace/src/gast.cpp" name="/github/workspace/src/gast.cpp">
+<area shape="rect" id="Node000001" title="Source of the gast operation. Greenwich Apparent Sidereal Time calculation." alt="" coords="77,5,226,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,63,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,49,66,87,63,83,121,44"/>
+<area shape="rect" id="Node000003" href="$gmst_8hpp.html" title="This header contains the gmst operation. Greenwich Mean Sidereal Time calculation." alt="" coords="87,94,216,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,46,154,78,149,78,149,46"/>
+<area shape="rect" id="Node000004" href="$EqnEquinox_8hpp.html" title="This header contains the EqnEquinox operation. It computes the equation of the equinoxes...." alt="" coords="240,94,407,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,44,284,85,282,90,193,49"/>
+</map>

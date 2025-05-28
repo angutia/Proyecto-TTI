@@ -1,0 +1,24 @@
+<map id="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/PrecMatrix.cpp" name="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/src/PrecMatrix.cpp">
+<area shape="rect" id="Node000001" title="Source of the PrecMatrix operation. Precession transformation of equatorial coordinates." alt="" coords="126,5,320,64"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="This header contains the matrix operations." alt="" coords="65,187,204,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,67,98,87,75,113,70,129,76,146,88,161,104,175,101,179,85,165,71,148,65,130,70,111,95,83,126,62"/>
+<area shape="rect" id="Node000007" href="$_s_a_t___const_8hpp.html" title="This header contains the definition of astronomical and mathematical constants." alt="" coords="330,187,500,213"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="304,62,342,83,375,110,396,140,410,171,405,173,392,143,372,114,339,87,302,67"/>
+<area shape="rect" id="Node000008" href="$_r__y_8hpp.html" title="This header contains the R_y operation. Computes the rotation matrix around the y&#45;axis." alt="" coords="236,112,362,139"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="249,63,280,98,276,102,245,66"/>
+<area shape="rect" id="Node000009" href="$_r__z_8hpp.html" title="This header contains the R_z operation. Computes the rotation matrix around the z&#45;axis." alt="" coords="84,112,212,139"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="201,66,171,101,167,98,197,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,261,62,288"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,216,65,254,62,250,116,212"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,261,144,288"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="134,215,125,247,120,246,129,213"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="264,261,321,288"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="163,211,252,252,250,257,161,216"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="168,261,240,288"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="149,212,184,248,180,252,145,216"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="395,216,328,255,326,251,392,212"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="271,142,179,182,177,177,269,137"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="301,139,296,246,291,246,296,139"/>
+<area shape="poly" id="edge12_Node000009_Node000002" title=" " alt="" coords="148,140,143,172,137,171,143,139"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="165,137,218,185,275,248,271,251,214,189,161,141"/>
+</map>

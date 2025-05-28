@@ -1,0 +1,9 @@
+<map id="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/include/R_x.hpp" name="C:/Users/PcBox Gaming/Documents/GitHub/Proyecto&#45;TTI/include/R_x.hpp">
+<area shape="rect" id="Node000001" title="This header contains the R_x operation. Computes the rotation matrix around the x&#45;axis." alt="" coords="223,5,416,64"/>
+<area shape="rect" id="Node000002" href="$_nut_matrix_8cpp.html" title="Source of the NutMatrix operation. It computes the transformation from mean to true equator and equin..." alt="" coords="5,112,199,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,73,163,114,161,109,245,69"/>
+<area shape="rect" id="Node000003" href="$_pole_matrix_8cpp.html" title="Source of the PoleMatrix operation. It transforms coordinates from pseudo Earth&#45;fixed to Earth&#45;fixed ..." alt="" coords="223,112,416,171"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="322,80,322,112,317,112,317,80"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html" title=" " alt="" coords="440,112,633,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="393,69,478,109,476,114,391,73"/>
+</map>

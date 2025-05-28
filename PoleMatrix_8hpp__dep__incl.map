@@ -1,0 +1,7 @@
+<map id="/github/workspace/include/PoleMatrix.hpp" name="/github/workspace/include/PoleMatrix.hpp">
+<area shape="rect" id="Node000001" title="This header contains the PoleMatrix operation. It transforms coordinates from pseudo Earth&#45;fixed to E..." alt="" coords="80,5,253,46"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="Source of the Accel operation. It computes the acceleration of an Earth orbiting satellite due to the..." alt="" coords="5,94,155,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,59,101,95,98,92,134,55"/>
+<area shape="rect" id="Node000003" href="$VarEqn_8cpp.html" title="Source of the VarEqn operation. It computes the variational equations, i.e. the derivative of the sta..." alt="" coords="179,94,328,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,55,236,92,232,95,195,59"/>
+</map>

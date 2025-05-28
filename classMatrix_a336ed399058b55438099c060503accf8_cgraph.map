@@ -1,0 +1,5 @@
+<map id="Matrix::assign_column" name="Matrix::assign_column">
+<area shape="rect" id="Node000001" title="Assigns a vector to a column of the current matrix." alt="" coords="5,5,155,31"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="203,5,300,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,16,187,16,187,21,155,21"/>
+</map>
