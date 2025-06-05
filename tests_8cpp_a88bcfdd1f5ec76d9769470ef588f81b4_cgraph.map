@@ -1,0 +1,9 @@
+<map id="v_extract_vector_01" name="v_extract_vector_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,144,56"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#a4546a134637be379d5b8c57f3c8e8465" title="Extracts a vector from the current vector." alt="" coords="192,5,336,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,32,176,27,177,32,145,37"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="225,55,302,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,50,210,58,210,63,144,55"/>
+<area shape="rect" id="Node000003" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="384,5,481,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="337,16,368,16,368,21,337,21"/>
+</map>

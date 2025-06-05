@@ -1,0 +1,10 @@
+<map id="Matrix::operator/" name="Matrix::operator/">
+<area shape="rect" id="Node000001" title="Divides the current matrix by another matrix." alt="" coords="5,55,119,80"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#ad8d8519e7f94df41a4c5b535b4899222" title="Inverts a matrix." alt="" coords="196,29,235,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,56,180,45,181,50,119,61"/>
+<area shape="rect" id="Node000004" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="167,79,264,104"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="119,74,152,79,151,84,119,79"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#a127af89400a7243fcf299416b7aea989" title="Calculates the determinant of a matrix." alt="" coords="312,29,351,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,40,296,40,296,45,235,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="311,30,307,21,310,11,318,5,332,3,346,5,354,12,351,16,344,10,332,8,320,10,314,14,313,20,316,28"/>
+</map>

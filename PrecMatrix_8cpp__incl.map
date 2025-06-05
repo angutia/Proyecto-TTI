@@ -1,0 +1,25 @@
+<map id="/github/workspace/src/PrecMatrix.cpp" name="/github/workspace/src/PrecMatrix.cpp">
+<area shape="rect" id="Node000001" title="Source of the PrecMatrix operation. Precession transformation of equatorial coordinates." alt="" coords="300,5,450,46"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="This header contains the matrix operations." alt="" coords="47,94,182,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,49,170,92,169,86,309,44"/>
+<area shape="rect" id="Node000007" href="$SAT__Const_8hpp.html" title="This header contains the definition of astronomical and mathematical constants." alt="" coords="207,94,374,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="356,48,317,85,313,81,352,44"/>
+<area shape="rect" id="Node000008" href="$R__y_8hpp.html" title="This header contains the R_y operation. Computes the rotation matrix around the y&#45;axis." alt="" coords="399,94,521,120"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="398,44,438,81,434,85,394,48"/>
+<area shape="rect" id="Node000010" href="$R__z_8hpp.html" title="This header contains the R_z operation. Computes the rotation matrix around the z&#45;axis." alt="" coords="546,94,668,120"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="434,44,558,86,556,91,432,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,168,62,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,122,60,159,57,155,99,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,168,144,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="118,120,118,152,112,152,112,120"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="318,168,376,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="155,118,304,163,303,168,153,123"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="168,168,240,193"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="132,118,179,156,176,160,128,122"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="302,118,330,154,326,157,298,122"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="442,122,380,161,378,157,440,118"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="452,168,588,193"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="472,118,502,154,498,157,468,122"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="563,123,391,170,390,165,562,118"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="594,122,548,160,545,156,590,118"/>
+</map>

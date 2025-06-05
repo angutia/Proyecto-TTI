@@ -1,0 +1,12 @@
+<map id="IERS_01" name="IERS_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,78,56"/>
+<area shape="rect" id="Node000002" href="$IERS_8cpp.html#a1613bc89717d0e37aef2c79cc1ecb646" title="Management of IERS time and polar motion data." alt="" coords="126,31,177,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,41,110,41,110,46,78,46"/>
+<area shape="rect" id="Node000003" href="$classMatrix.html#a89e09cdaed64e5180c2082aa4544943b" title="Extracts a column from the current matrix." alt="" coords="225,5,375,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="177,37,209,31,210,36,178,42"/>
+<area shape="rect" id="Node000005" href="$classMatrix.html#aa277d1e484417f8afca41be8b2213a29" title="Extracts a row from the current matrix." alt="" coords="236,55,365,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="178,45,221,52,220,57,177,50"/>
+<area shape="rect" id="Node000004" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="423,31,521,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,27,408,31,407,37,375,32"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="365,56,407,50,408,55,366,61"/>
+</map>

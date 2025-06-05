@@ -1,0 +1,7 @@
+<map id="/github/workspace/include/NutAngles.hpp" name="/github/workspace/include/NutAngles.hpp">
+<area shape="rect" id="Node000001" title="This header contains the NutAngles operation. Computes the nutation in longitude and obliquity." alt="" coords="80,5,253,46"/>
+<area shape="rect" id="Node000002" href="$EqnEquinox_8cpp.html" title="Source of the EqnEquinox operation. It computes the equation of the equinoxes." alt="" coords="5,94,155,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,59,101,95,98,92,134,55"/>
+<area shape="rect" id="Node000003" href="$NutMatrix_8cpp.html" title="Source of the NutMatrix operation. It computes the transformation from mean to true equator and equin..." alt="" coords="179,94,328,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,55,236,92,232,95,195,59"/>
+</map>

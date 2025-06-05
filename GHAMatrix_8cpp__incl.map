@@ -1,0 +1,20 @@
+<map id="/github/workspace/src/GHAMatrix.cpp" name="/github/workspace/src/GHAMatrix.cpp">
+<area shape="rect" id="Node000001" title="Source of the GHAMatrix operation. Transformation from true equator and equinox to Earth equator and ..." alt="" coords="195,5,344,46"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="This header contains the matrix operations." alt="" coords="47,94,182,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,49,153,89,151,84,230,44"/>
+<area shape="rect" id="Node000007" href="$gast_8hpp.html" title="This header contains the gast operation. Greenwich Apparent Sidereal Time calculation." alt="" coords="207,94,332,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="272,46,272,78,267,78,267,46"/>
+<area shape="rect" id="Node000008" href="$R__z_8hpp.html" title="This header contains the R_z operation. Computes the rotation matrix around the z&#45;axis." alt="" coords="356,94,479,120"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="308,44,383,84,380,89,305,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,168,62,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,122,60,159,57,155,99,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,168,144,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="118,120,118,152,112,152,112,120"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="266,168,324,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="146,118,253,160,251,165,144,123"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="168,168,240,193"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="132,118,179,156,176,160,128,122"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="398,123,330,162,327,157,395,118"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="350,168,485,193"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="420,120,420,152,415,152,415,120"/>
+</map>

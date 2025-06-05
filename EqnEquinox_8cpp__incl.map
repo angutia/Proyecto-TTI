@@ -1,0 +1,11 @@
+<map id="/github/workspace/src/EqnEquinox.cpp" name="/github/workspace/src/EqnEquinox.cpp">
+<area shape="rect" id="Node000001" title="Source of the EqnEquinox operation. It computes the equation of the equinoxes." alt="" coords="207,5,357,46"/>
+<area shape="rect" id="Node000002" href="$NutAngles_8hpp.html" title="This header contains the NutAngles operation. Computes the nutation in longitude and obliquity." alt="" coords="5,94,167,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,49,131,90,129,85,232,44"/>
+<area shape="rect" id="Node000004" href="$MeanObliquity_8hpp.html" title="This header contains the MeanObliquity operation. It computes the mean obliquity of the ecliptic." alt="" coords="191,94,373,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,46,285,78,279,78,279,46"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="397,94,455,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="319,44,392,84,389,88,317,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="61,168,111,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,120,89,152,83,152,83,120"/>
+</map>

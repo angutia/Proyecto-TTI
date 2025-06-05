@@ -1,0 +1,9 @@
+<map id="m_extract_row_01" name="m_extract_row_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,133,56"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#aa277d1e484417f8afca41be8b2213a29" title="Extracts a row from the current matrix." alt="" coords="181,5,310,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,32,165,27,166,32,133,37"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="207,55,284,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,50,192,58,191,63,133,55"/>
+<area shape="rect" id="Node000003" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="358,5,455,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,16,342,16,342,21,310,21"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="/github/workspace/include/R_y.hpp" name="/github/workspace/include/R_y.hpp">
+<area shape="rect" id="Node000001" title="This header contains the R_y operation. Computes the rotation matrix around the y&#45;axis." alt="" coords="167,5,340,46"/>
+<area shape="rect" id="Node000002" href="$LTC_8cpp.html" title="Source of the LTC operation. It computes the transformation from Greenwich meridian system to local t..." alt="" coords="5,94,155,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,56,120,96,118,91,199,51"/>
+<area shape="rect" id="Node000003" href="$PoleMatrix_8cpp.html" title="Source of the PoleMatrix operation. It transforms coordinates from pseudo Earth&#45;fixed to Earth&#45;fixed ..." alt="" coords="179,94,328,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,62,256,94,251,94,251,62"/>
+<area shape="rect" id="Node000004" href="$PrecMatrix_8cpp.html" title="Source of the PrecMatrix operation. Precession transformation of equatorial coordinates." alt="" coords="352,94,501,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,51,389,91,386,96,305,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Matrix::assign_row" name="Matrix::assign_row">
+<area shape="rect" id="Node000001" title="Assigns a vector to a row of the current matrix." alt="" coords="5,5,134,31"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Creates a new matrix." alt="" coords="182,5,279,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
+</map>

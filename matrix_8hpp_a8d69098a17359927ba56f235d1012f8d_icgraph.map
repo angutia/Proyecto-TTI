@@ -1,0 +1,16 @@
+<map id="dot" name="dot">
+<area shape="rect" id="Node000001" title="Calculates the dot product of two vectors." alt="" coords="476,80,515,106"/>
+<area shape="rect" id="Node000002" href="$AzElPa_8cpp.html#ae89a6c135135b96ec7057c45dced4159" title="Computes azimuth, elevation and partials from local tangent coordinates." alt="" coords="359,55,422,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,87,422,78,423,73,461,82"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#a7165ec9545a96a98f5f2118f87d35119" title=" " alt="" coords="353,104,428,130"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="461,103,429,111,428,106,460,98"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a29c2bc700b92765e76e4c0552966a7f3" title=" " alt="" coords="221,5,305,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,52,297,34,299,29,345,47"/>
+<area shape="rect" id="Node000006" href="$EKF__GEOS3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="238,55,288,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="343,70,288,70,288,65,343,65"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,56,173,82"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,40,173,58,171,53,214,35"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,55,82"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,72,55,72,55,66,87,66"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="337,114,220,95,173,83,174,78,222,90,338,109"/>
+</map>
